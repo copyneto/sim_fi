@@ -1,0 +1,83 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeNamePlural: 'Cheques'
+    },
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'Bukrs',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+    }]
+}
+annotate entity ZC_CUSTCHEQUE_COMP_H with
+{
+
+  @UI.facet: [
+  {  id: 'HEADER',
+     isSummary: true,
+     purpose: #STANDARD,
+     type: #IDENTIFICATION_REFERENCE,
+     label: 'Cabeçalho',
+     position: 10
+  },
+  {  id: 'CHEQUES',
+     isSummary: true,
+     purpose: #STANDARD,
+     type: #LINEITEM_REFERENCE,
+     label: 'Cheques',
+     position: 10,
+     targetElement: '_Cheques'
+  },
+  {  id: 'FAT',
+     isSummary: true,
+     purpose: #STANDARD,
+     type: #LINEITEM_REFERENCE,
+     label: 'Faturas',
+     position: 20,
+     targetElement: '_Faturas'
+  }  ]
+
+
+  @UI: { lineItem:       [{ position: 10  }],
+         identification: [{ position: 10 }],
+         selectionField: [{ position: 10 }] }
+  Bukrs;
+
+  @UI: { lineItem:       [{  position: 20 }],
+         identification: [{ position: 20 }],
+         selectionField: [{ position: 20 }] }
+  Kunnr;
+
+
+  @UI: { lineItem:       [{  position: 30 }],
+         identification: [{ position: 30 }]}
+  RaizCnpj;
+
+  @UI.hidden: true
+  @UI: { identification: [{ type : #FOR_ACTION, dataAction: 'getCheques', label:'Busca Dados' } ,
+                          { type : #FOR_ACTION, dataAction: 'compensar', label:'Compensar' } ] }
+  Name;
+
+  @UI.hidden: true
+  DescEmp;
+
+  @UI: { identification: [{ position: 40, label: 'Valor Cheque Atribuido' }]}
+  ValorChequeAtribuido;
+
+  @UI: { identification: [{ position: 50, label: 'Valor Cheque Não Atribuido' }]}
+  ValorChequeNAtribuido;
+
+  @UI: { identification: [{ position: 60, label: 'Valor Faturas Atribuido' }]}
+  ValorFatAtribuido;
+
+  @UI: { identification: [{ position: 70, label: 'Valor Faturas Não Atribuido' }]}
+  ValorFatNAtribuido;
+
+  @UI: { identification: [{ position: 80, label: 'Valor Residual' }]}
+  ValorResidual;
+
+}

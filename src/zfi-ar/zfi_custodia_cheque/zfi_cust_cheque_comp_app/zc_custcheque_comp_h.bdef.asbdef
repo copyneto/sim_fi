@@ -1,0 +1,30 @@
+projection implementation in class zclfi_bp_custcheque_h_proj unique;
+strict ( 2 );
+
+define behavior for ZC_CUSTCHEQUE_COMP_H //alias <alias_name>
+{
+
+  use action getCheques;
+
+  use action compensar;
+
+  use association _Cheques { }
+  use association _Faturas { }
+}
+
+define behavior for ZC_CUSTCHEQUE_COMP_ICHEQUES alias _Cheques
+{
+
+  use association _Header;
+
+  use action setAtribuido;
+  use action setDinheiro;
+}
+
+define behavior for ZC_CUSTCHEQUE_COMP_IFAT alias _Fat
+{
+
+  use association _Header;
+
+  use action setAtribuidoFat;
+}

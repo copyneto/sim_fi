@@ -1,0 +1,3 @@
+FUNCTION-POOL ZFGFI_ADIANT_BOMBEIO.         "MESSAGE-ID ..
+
+* INCLUDE LZFGFI_ADIANT_BOMBEIOD...          " Local class definition

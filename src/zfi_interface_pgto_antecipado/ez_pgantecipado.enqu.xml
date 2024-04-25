@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_ENQU" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD25V>
+    <VIEWNAME>EZ_PGANTECIPADO</VIEWNAME>
+    <AGGTYPE>E</AGGTYPE>
+    <ROOTTAB>ZTFI_ADTO_OV</ROOTTAB>
+   </DD25V>
+   <DD26E_TABLE>
+    <DD26E>
+     <VIEWNAME>EZ_PGANTECIPADO</VIEWNAME>
+     <TABNAME>ZTFI_ADTO_OV</TABNAME>
+     <TABPOS>0001</TABPOS>
+     <FORTABNAME>ZTFI_ADTO_OV</FORTABNAME>
+     <ENQMODE>X</ENQMODE>
+    </DD26E>
+   </DD26E_TABLE>
+   <DD27P_TABLE>
+    <DD27P>
+     <VIEWNAME>EZ_PGANTECIPADO</VIEWNAME>
+     <OBJPOS>0001</OBJPOS>
+     <VIEWFIELD>MANDT</VIEWFIELD>
+     <TABNAME>ZTFI_ADTO_OV</TABNAME>
+     <FIELDNAME>MANDT</FIELDNAME>
+     <KEYFLAG>X</KEYFLAG>
+     <ENQMODE>X</ENQMODE>
+    </DD27P>
+    <DD27P>
+     <VIEWNAME>EZ_PGANTECIPADO</VIEWNAME>
+     <OBJPOS>0002</OBJPOS>
+     <VIEWFIELD>VBELN</VIEWFIELD>
+     <TABNAME>ZTFI_ADTO_OV</TABNAME>
+     <FIELDNAME>VBELN</FIELDNAME>
+     <KEYFLAG>X</KEYFLAG>
+     <ENQMODE>X</ENQMODE>
+     <MEMORYID>AUN</MEMORYID>
+     <CONVEXIT>ALPHA</CONVEXIT>
+    </DD27P>
+   </DD27P_TABLE>
+  </asx:values>
+ </asx:abap>
+</abapGit>

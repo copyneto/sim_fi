@@ -1,0 +1,9 @@
+@Metadata.layer: #CORE
+annotate entity ZI_FI_SET_STATUS_CUST_CHEQUES with
+{
+
+  @Consumption.valueHelpDefinition: [{entity:{name  : 'ZI_FI_VH_STATUS_CHEQUE', element: 'ObjetoId' }}]
+  @EndUserText.label: 'Novo Status'
+  NovoStatus;
+
+}

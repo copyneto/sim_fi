@@ -1,0 +1,91 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeNamePlural: 'Faturas'
+    },
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'Bukrs',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+    }]
+}
+
+annotate entity ZC_CUSTCHEQUE_COMP_IFAT with
+{
+
+  @UI.facet: [
+   {          id: 'FAT',
+       isSummary: true,
+       purpose: #STANDARD,
+       type: #LINEITEM_REFERENCE,
+       label: 'Faturas',
+       position: 10
+   }]
+
+  @UI.hidden: true
+  Bukrs;
+
+  @UI.hidden: true
+  Kunnr;
+
+  @UI.hidden: true
+  Raizcnpj;
+
+  @UI: { lineItem:       [{ position: 10, criticality: 'CriticalityAtri' }],
+         identification: [{ position: 10 }]}
+  Atribuido;
+
+  @UI.hidden: true
+  CriticalityAtri;
+
+  @UI: { lineItem:       [{ position: 20  }],
+         identification: [{ position: 20 }]}
+  Doc;
+
+  @UI: { lineItem:       [{ position: 30  }],
+         identification: [{ position: 30 }]}
+  Gjahr;
+
+  @UI: { lineItem:       [{ position: 40  }],
+         identification: [{ position: 40 }]}
+  Buzei;
+
+  @UI: { lineItem:       [{ position: 50  }],
+         identification: [{ position: 50 }]}
+  Wrbtr;
+
+  @UI.hidden: true
+  @UI: { lineItem: [{ type : #FOR_ACTION, dataAction: 'setAtribuidoFat', label:'Marcar/Desmarcar' } ]}
+  Moeda;
+
+  @UI: { lineItem:       [{ position: 60  }],
+        identification: [{ position: 60 }]}
+  ClienteFat;
+
+  @UI: { lineItem:       [{ position: 70  }],
+        identification: [{ position: 70 }]}
+  blart;
+
+  @UI: { lineItem:       [{ position: 80  }],
+        identification: [{ position: 80 }]}
+  xblnr;
+
+  @UI: { lineItem:       [{ position: 90  }],
+        identification: [{ position: 90 }]}
+  bschl;
+
+  @UI: { lineItem:       [{ position: 100  }],
+        identification: [{ position: 100 }]}
+  umskz;
+
+  @UI: { lineItem:       [{ position: 110  }],
+        identification: [{ position: 110 }]}
+  zuonr;
+
+
+}

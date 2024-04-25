@@ -1,0 +1,35 @@
+@Metadata.layer: #CORE
+
+@UI.lineItem: [{criticality: 'Criticality'}]
+annotate view ZC_FI_VAN_BAN_LOG_RETORNO with
+{
+  @UI.selectionField: [ { position: 10 } ]
+  @UI: { lineItem: [ { position:10 } ]}
+  Empresa;
+  @UI.selectionField: [ { position: 20 } ]
+  @Consumption.filter: { selectionType: #INTERVAL }
+  @UI: { lineItem: [ { position:50 } ]}
+  @EndUserText.label: 'Data Exec.'
+  Data;
+  @UI: { lineItem: [ { position:60 } ]}
+  @EndUserText.label: 'Hora Exec.'
+  Hora;
+  @UI: { lineItem: [ { position:20 } ]}
+  @EndUserText.label: 'Nome do Arquivo'
+  Arquivo;
+  @UI.hidden: true
+  @EndUserText.label: 'Sequencial'
+  Sequencial;
+  @UI: { lineItem: [ { position:70 } ]}
+  @EndUserText.label: 'Usuário'
+  Usuario;
+  @UI.selectionField: [ { position: 30 } ]
+  @UI: { lineItem: [{ hidden: true }]}
+  @EndUserText.label: 'Tipo'
+  MsgTipo;
+  @UI: { lineItem: [ { position:40 } ]}
+  @EndUserText.label: 'Mensagem'
+  Mensagem;
+  @UI.hidden: true
+  Criticality;
+}

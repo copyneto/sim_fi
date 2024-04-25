@@ -1,0 +1,106 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { typeName: 'Documento',
+                  typeNamePlural: 'Documentos',
+                  title: { type: #STANDARD, value: 'AccountingDocument' } }
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'FiscalYear', direction:  #DESC },
+                                        { by: 'AccountingDocument', direction:  #DESC },
+                                        { by: 'AccountingDocumentItemNo', direction:  #ASC }] }]
+                                        
+annotate entity ZC_FI_COCKPIT_BOMBEIO_FAT with
+{
+
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [ { id:            'Faturas',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Faturas',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+
+  @UI.hidden: true
+  CompanyCode;
+  @Consumption.semanticObject:'AccountingDocument'
+  @UI.lineItem:        [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  AccountingDocument;
+
+  @UI.lineItem:        [{ position: 20 }]
+  @UI.identification:  [{ position: 20 }]
+  AccountingDocumentItemNo;
+
+  @UI.lineItem:        [{ position: 30 }]
+  @UI.identification:  [{ position: 30 }]
+  FiscalYear;
+
+  @UI.lineItem:        [{ position: 40 }]
+  @UI.identification:  [{ position: 40 }]
+  Supplier;
+
+  @UI.hidden: true
+  NomeFornecedor;
+
+  @UI.lineItem:        [{ position: 50 }]
+  @UI.identification:  [{ position: 50 }]
+  Centro;
+
+  @UI.hidden: true
+  NomeCentro;
+
+  @Consumption.semanticObject:'PurchaseOrder'
+  @UI.lineItem:        [{ position: 60, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 60, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  PurchaseOrder;
+
+  @UI.lineItem:        [{ position: 70 }]
+  @UI.identification:  [{ position: 70 }]
+  PurchaseOrderItem;
+
+  @Consumption.semanticObject:'SupplierInvoice'
+  @UI.lineItem:        [{ position: 80, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 80, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  SupplierInvoice;
+
+  @UI.lineItem:        [{ position: 90 }]
+  @UI.identification:  [{ position: 90 }]
+  Bloqueio;
+
+  @UI.hidden: true
+  TextoBloqueio;
+
+  @UI.lineItem:        [{ position: 100 }]
+  @UI.identification:  [{ position: 100 }]
+  FormPagto;
+
+  @UI.hidden: true
+  TextoFormPagto;
+
+  @UI.lineItem:        [{ position: 110 }]
+  @UI.identification:  [{ position: 110 }]
+  BancoEmpresa;
+
+  @UI.hidden: true
+  TextoBancoEmpresa;
+
+  @UI.lineItem:        [{ position: 120 }]
+  @UI.identification:  [{ position: 120 }]
+  Referencia;
+
+  @UI.lineItem:        [{ position: 130 }]
+  @UI.identification:  [{ position: 130 }]
+  Vencimento;
+
+  @UI.hidden: true
+  Moeda;
+
+  @UI.lineItem:        [{ position: 140 }]
+  @UI.identification:  [{ position: 140 }]
+  Valor;
+}

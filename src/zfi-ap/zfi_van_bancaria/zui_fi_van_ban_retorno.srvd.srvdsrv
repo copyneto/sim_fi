@@ -1,0 +1,5 @@
+@EndUserText.label: 'Serv Definition Processa Retorno Extrato'
+define service ZUI_FI_VAN_BAN_RETORNO {
+  expose ZC_FI_VAN_BAN_RETORNO;
+  expose ZI_FI_VH_VARIANTE;
+}

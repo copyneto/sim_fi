@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Def-APP Geração Arquivo Custódia'
+define service ZUI_FI_GERACAO_ARQUIVO_CUST {
+  expose ZC_FI_GERACAO_ARQ_CUST as GeracaoArq;
+  expose ZI_FI_GERACAO_ARQ_CUST_CE as PDF;
+}

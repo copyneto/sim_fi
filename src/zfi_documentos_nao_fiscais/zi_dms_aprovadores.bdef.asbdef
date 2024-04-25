@@ -1,0 +1,29 @@
+managed implementation in class zcl_dms_aprovadores unique;
+strict ( 2 );
+
+define behavior for ZI_DMS_APROVADORES alias Manutencao
+persistent table ztdms_aprovador
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) DESCAPROVADOR, Criado_por, Criado_em, Modificado_por, Modificado_em, Hora;
+  field ( readonly : update ) Aprovador;
+
+  mapping for ztdms_aprovador
+  {
+    Aprovador = APROVADOR;
+    Status = STATUS;
+    Criado_por = CREATED_BY;
+    Criado_em = CREATED_AT;
+    Modificado_por = LAST_CHANGED_BY;
+    Modificado_em = LAST_CHANGED_AT;
+    Hora = LOCAL_LAST_CHANGED_AT;
+  }
+
+
+}

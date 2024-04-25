@@ -1,0 +1,23 @@
+managed implementation in class zclfi_ret_client unique;
+strict ( 2 );
+
+define behavior for ZI_FI_RET_CLIENT alias Ret
+persistent table ztfi_retirar_cli
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  delete;
+
+  field ( readonly ) DataCriacao,UsuarioCriacao;
+
+  validation validaCliente   on save { field Cliente; create; }
+
+  mapping for ZTFI_RETIRAR_CLI
+  {
+    Cliente        = cliente;
+    UsuarioCriacao = usuario_criacao;
+    DataCriacao    = data_criacao;
+  }
+}

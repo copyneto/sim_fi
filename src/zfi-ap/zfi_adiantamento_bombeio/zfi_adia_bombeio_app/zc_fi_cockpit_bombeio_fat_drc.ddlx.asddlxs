@@ -1,0 +1,63 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { typeName: 'Documento',
+                  typeNamePlural: 'Documentos',
+                  title: { type: #STANDARD, value: 'BR_NotaFiscal' } }
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'BR_NotaFiscal', direction:  #DESC }] }]
+
+annotate view ZC_FI_COCKPIT_BOMBEIO_FAT_DRC with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [ { id:            'FaturaDRC',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Faturas DRC',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+
+  @UI.hidden: true
+  CompanyCode;
+
+  @Consumption.semanticObject:'NotaFiscal'
+  @UI.lineItem:        [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  BR_NotaFiscal;
+
+  @UI.lineItem:        [{ position: 20 }]
+  @UI.identification:  [{ position: 20 }]
+  BusinessPlace;
+
+  @UI.hidden: true
+  BusinessPlaceDescription;
+
+  @UI.lineItem:        [{ position: 30 }]
+  @UI.identification:  [{ position: 30 }]
+  BR_NFPartner;
+
+  @UI.hidden: true
+  BR_NFPartnerName;
+
+  @UI.lineItem:        [{ position: 40 }]
+  @UI.identification:  [{ position: 40 }]
+  BR_NFAuthenticationDate;
+
+  @UI.lineItem:        [{ position: 50 }]
+  @UI.identification:  [{ position: 50 }]
+  BR_NFeNumber;
+
+  @UI.lineItem:        [{ position: 60 }]
+  @UI.identification:  [{ position: 60 }]
+  BR_NFOriginalAmount;
+
+  @UI.lineItem:        [{ position: 70 }]
+  @UI.identification:  [{ position: 70 }]
+  BR_NFNetAmount;
+
+}

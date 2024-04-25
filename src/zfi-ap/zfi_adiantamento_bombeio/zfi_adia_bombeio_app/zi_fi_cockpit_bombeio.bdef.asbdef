@@ -1,0 +1,72 @@
+unmanaged implementation in class zclfi_cockpit_bombeio unique;
+strict ( 2 );
+
+define behavior for ZI_FI_COCKPIT_BOMBEIO alias Bombeio
+lock master
+authorization master ( instance )
+{
+  association _SolicitacaoAdiantamento;
+  association _Pedido;
+  association _AdiaPagos;
+  association _DevolucaoCancelamento;
+  association _FaturaDRC;
+  association _Faturas;
+}
+
+define behavior for ZI_FI_COCKPIT_BOMBEIO_SOL_ADI alias SolicitacaoAdiantamento
+lock dependent by _Bombeio
+authorization dependent by _Bombeio
+{
+  action ( features : instance ) liberar;
+  action ( features : instance ) estornar;
+  action ( features : instance ) ajustar parameter ZI_FI_BOMBEIO_POPUP_AJUSTE_SOL;
+
+  field ( readonly ) CompanyCode;
+
+  association _Bombeio;
+}
+
+define behavior for ZI_FI_COCKPIT_BOMBEIO_PED alias Pedido
+lock dependent by _Bombeio
+authorization dependent by _Bombeio
+{
+  field ( readonly ) CompanyCode;
+
+  association _Bombeio;
+}
+
+define behavior for ZI_FI_COCKPIT_BOMBEIO_ADI_PAG alias AdiantamentoPagamento
+lock dependent by _Bombeio
+authorization dependent by _Bombeio
+{
+  field ( readonly ) CompanyCode;
+
+  association _Bombeio;
+}
+
+define behavior for ZI_FI_COCKPIT_BOMBEIO_DEV_CAN alias DevolucaoCancelamento
+lock dependent by _Bombeio
+authorization dependent by _Bombeio
+{
+  field ( readonly ) CompanyCode;
+
+  association _Bombeio;
+}
+
+define behavior for ZI_FI_COCKPIT_BOMBEIO_FAT_DRC alias FaturaDRC
+lock dependent by _Bombeio
+authorization dependent by _Bombeio
+{
+  field ( readonly ) CompanyCode;
+
+  association _Bombeio;
+}
+
+define behavior for ZI_FI_COCKPIT_BOMBEIO_FAT alias Faturas
+lock dependent by _Bombeio
+authorization dependent by _Bombeio
+{
+  field ( readonly ) CompanyCode;
+
+  association _Bombeio;
+}

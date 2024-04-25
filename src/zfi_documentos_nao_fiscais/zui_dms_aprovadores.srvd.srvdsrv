@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - Aprovadores'
+define service ZUI_DMS_APROVADORES {
+  expose ZC_DMS_APROVADORES as Cadastro_Aprovadores;
+}

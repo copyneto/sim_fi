@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition Bloqueio de Clientes'
+define service ZUI_FI_BLOQ_CLIENT {
+  expose ZC_FI_BLOQ_CLIENT;
+}

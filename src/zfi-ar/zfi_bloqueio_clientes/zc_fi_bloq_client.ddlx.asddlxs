@@ -1,0 +1,40 @@
+@Metadata.layer: #CORE
+annotate view ZC_FI_BLOQ_CLIENT
+    with 
+{
+
+ @UI.facet:   [ { id:             'Cliente',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Bloqueio de Clientes',
+                 position:        10 } ]
+
+    @UI: {  lineItem:       [ { position: 10 } ] }
+    @UI: {  identification: [ { position: 10 } ] }
+    @UI: { selectionField: [{ position: 10 }] }
+    @EndUserText.label: 'Cliente'
+    Cliente;
+    @UI: {  lineItem:       [ { position: 20 } ] }
+    @UI: {  identification: [ { position: 20 } ] }
+    @EndUserText.label: 'Dias'
+    Dias;
+    @UI: {  lineItem:       [ { position: 30 } ] }
+    @UI: {  identification: [ { position: 30 } ] }
+    @EndUserText.label: 'Criado por'
+    UsuarioCriacao;
+    @UI: {  lineItem:       [ { position: 40 } ] }
+    @UI: {  identification: [ { position: 40 } ] }
+    @EndUserText.label: 'Data de Criação'
+    DataCriacao;
+    @UI: {  lineItem:       [ { position: 50 } ] }
+    @UI: {  identification: [ { position: 50 } ] }
+    @EndUserText.label: 'Modificado por'
+    UsuarioModif;
+    @UI: {  lineItem:       [ { position: 60 } ] }
+    @UI: {  identification: [ { position: 60 } ] }
+    @EndUserText.label: 'Data de Modificação'
+    DataModif;
+    @UI.hidden: true
+    Nome;
+    
+}

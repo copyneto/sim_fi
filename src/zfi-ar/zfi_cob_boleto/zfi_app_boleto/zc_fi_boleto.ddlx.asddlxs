@@ -1,0 +1,93 @@
+@Metadata.layer: #CORE
+annotate entity ZC_FI_BOLETO with
+{
+
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem:       [{ position: 10, label: 'Empresa' }],
+         identification: [{ position: 10, label: 'Empresa' }],
+         selectionField: [{ position: 10 }] }
+  Empresa;
+
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem:       [{ position: 20, label: 'Nº Documento' }],
+         identification: [{ position: 20, label: 'Nº Documento' }],
+         selectionField: [{ position: 11 }] }
+  Documento;
+
+  @UI: { lineItem:       [{ position: 30, label: 'Parcela' }],
+         identification: [{ position: 30, label: 'Parcela' }],
+         selectionField: [{ position: 12 }] }
+  Parcela;
+
+  @UI: { lineItem:       [{ position: 40, label: 'Exercicio' }],
+         identification: [{ position: 40, label: 'Exercicio' }],
+         selectionField: [{ position: 13 }] }
+  Exercicio;
+
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem:       [{ position: 50, label: 'Tp. Doc' }],
+         identification: [{ position: 50, label: 'Tp. Doc' }] }
+  TipoDoc;
+
+  @Search.defaultSearchElement: true
+  @Search.fuzzinessThreshold: 0.8
+  @UI: { lineItem:       [{ position: 60, label: 'Cliente' }],
+         identification: [{ position: 60, label: 'Cliente' }],
+         selectionField: [{ position: 20 }]}
+  Cliente;
+
+  @UI: { lineItem:       [{ position: 70, label: 'Referência' }],
+         identification: [{ position: 70, label: 'Referência' }],
+         selectionField: [{ position: 40 }] }
+  Referencia;
+
+  @UI.hidden: true
+  Moeda;
+
+  @UI: { lineItem:       [{ position: 80, label: 'Valor' }],
+         identification: [{ position: 80, label: 'Valor' }] }
+  Valor;
+
+  @UI: { lineItem:       [{ position: 90, label: 'Banco Empresa' },
+                          { type: #FOR_ACTION, dataAction: 'enviaEmail', label: 'Enviar Email'},
+                          { type: #FOR_ACTION, dataAction: 'enviaPortalB2B', label: 'Enviar Portal B2B', invocationGrouping: #CHANGE_SET}
+                         ],
+         identification: [{ position: 90, label: 'Banco Empresa' }],
+         selectionField: [{ position: 70 }] }
+  BancoEmpresa;
+
+  @UI: { lineItem:       [{ position: 100, label: 'Forma de Pagto' }],
+         identification: [{ position: 100, label: 'Forma de Pagto' }] }
+  FormaPagto;
+
+  @UI: { lineItem:       [{ position: 110, label: 'Data do Documento' }],
+         identification: [{ position: 110, label: 'Data do Documento' }] }
+  DataDoc;
+
+  @UI: { lineItem:       [{ position: 120, label: 'Data de Lançamento' }],
+         identification: [{ position: 120, label: 'Data de Lançamento' }] }
+  DataLanc;
+  @UI: { lineItem:       [{ position: 130, label: 'Nosso Número' }],
+         identification: [{ position: 130, label: 'Nosso Número' }] }
+  NossoNumero;
+
+  @UI: { lineItem:       [{ position: 140, label: 'Solicitação LC' }],
+         identification: [{ position: 140, label: 'Solicitação LC' }] }
+  SolicLC;
+
+  @UI: { lineItem:       [{ position: 150, label: 'Data do Vencimento' }],
+         identification: [{ position: 150, label: 'Data do Vencimento' }],
+         selectionField: [{ position: 30 }] }
+  Vencimento;
+
+  @UI: { lineItem:       [{ position: 160, label: 'Status' },
+                          { type: #FOR_ACTION, dataAction: 'gerarBoleto',  label: 'Gerar Boleto'} ],
+         identification: [{ position: 160, label: 'Status' }],
+         selectionField: [{ position: 80 }] }
+  Status;
+
+
+}

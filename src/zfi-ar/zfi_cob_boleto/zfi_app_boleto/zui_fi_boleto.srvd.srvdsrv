@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Def - APP Boleto'
+define service ZUI_FI_BOLETO {
+  expose ZC_FI_BOLETO;
+}

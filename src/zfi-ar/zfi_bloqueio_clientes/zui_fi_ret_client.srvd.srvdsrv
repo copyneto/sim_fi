@@ -1,0 +1,4 @@
+@EndUserText.label: 'Serv Definition Retirar Clientes'
+define service ZUI_FI_RET_CLIENT {
+  expose ZC_FI_RET_CLIENT;
+}

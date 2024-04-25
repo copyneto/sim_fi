@@ -1,0 +1,93 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { typeName: 'Documento',
+                  typeNamePlural: 'Documentos',
+                  title: { type: #STANDARD, value: 'TextKey' } }
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'FiscalYear', direction:  #DESC },
+                                        { by: 'AccountingDocument', direction:  #DESC },
+                                        { by: 'AccountingDocumentItemNo', direction:  #ASC }] }]
+
+annotate view ZC_FI_COCKPIT_BOMBEIO_ADI_PAG with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [ { id:            'Pagos',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Adiantamentos Pagos',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+
+  @UI.hidden: true
+  CompanyCode;
+
+  @UI.hidden: true
+  TextKey;
+
+  @Consumption.semanticObject:'AccountingDocument'
+  @UI.lineItem:        [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  AccountingDocument;
+
+  @UI.lineItem:        [{ position: 20 }]
+  @UI.identification:  [{ position: 20 }]
+  AccountingDocumentItemNo;
+
+  @UI.lineItem:        [{ position: 30 }]
+  @UI.identification:  [{ position: 30 }]
+  FiscalYear;
+
+  @UI.lineItem:        [{ position: 40 }]
+  @UI.identification:  [{ position: 40 }]
+  Supplier;
+
+  @UI.hidden: true
+  SupplierName;
+
+  @UI.lineItem:        [{ position: 50 }]
+  @UI.identification:  [{ position: 50 }]
+  BusinessPlace;
+
+  @UI.hidden: true
+  BusinessPlaceDescription;
+
+  @UI.lineItem:        [{ position: 60 }]
+  @UI.identification:  [{ position: 60 }]
+  PaymentBlockingReason;
+
+  @UI.hidden: true
+  PaymentBlockingReasonName;
+
+  @UI.lineItem:        [{ position: 70 }]
+  @UI.identification:  [{ position: 70 }]
+  PaymentMethod;
+
+  @UI.hidden: true
+  PaymentMethodDescription;
+
+  @UI.lineItem:        [{ position: 80 }]
+  @UI.identification:  [{ position: 80 }]
+  HouseBank;
+
+  @UI.hidden: true
+  HouseBankName;
+
+  @UI.lineItem:        [{ position: 90 }]
+  @UI.identification:  [{ position: 90 }]
+  DocumentReferenceID;
+
+  @UI.lineItem:        [{ position: 100 }]
+  @UI.identification:  [{ position: 100 }]
+  NetDueDate;
+
+  @UI.lineItem:        [{ position: 110 }]
+  @UI.identification:  [{ position: 110 }]
+  Amount;
+
+}

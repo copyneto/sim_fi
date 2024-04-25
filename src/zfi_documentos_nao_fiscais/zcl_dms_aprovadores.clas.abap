@@ -1,0 +1,5 @@
+CLASS zcl_dms_aprovadores DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_dms_aprovadores.
+ENDCLASS.
+
+CLASS zcl_dms_aprovadores IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition'
+define service ZUI_GROUP_REPORTING {
+  expose ZC_FI_GROUP_REPORTING;
+}

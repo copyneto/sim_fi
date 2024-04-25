@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Def - APP Cheque'
+define service ZUI_FI_CUST_CHEQUE {
+  expose ZC_FI_CUST_CHEQUE as Cheque;
+  expose ZI_FI_VH_STATUS_CHEQUE as SetCheque;
+}

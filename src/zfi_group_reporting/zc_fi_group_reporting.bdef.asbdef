@@ -1,0 +1,10 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_FI_GROUP_REPORTING alias Group
+{
+
+  use action equalizar;
+  use action estornar;
+  use action analisar;
+}

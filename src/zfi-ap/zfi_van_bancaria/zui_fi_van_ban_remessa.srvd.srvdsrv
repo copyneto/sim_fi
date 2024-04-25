@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - Van Bancária'
+define service ZUI_FI_VAN_BAN_REMESSA {
+  expose ZC_FI_VAN_BAN_REMESSA;
+}

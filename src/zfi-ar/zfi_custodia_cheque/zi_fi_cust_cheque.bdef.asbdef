@@ -1,0 +1,41 @@
+managed implementation in class zclfi_bp_cust_cheque unique;
+strict ( 2 );
+
+define behavior for ZI_FI_CUST_CHEQUE alias _Cheque
+persistent table ztfi_cust_cheque
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  action setStatus parameter ZI_FI_SET_STATUS_CUST_CHEQUES result [1] $self;
+  action ( features : instance ) contab result [1] $self;
+  action ( features : instance ) deleteCheque result [1] $self;
+
+  create;
+  update;
+  delete ( precheck );
+
+
+  field ( readonly )
+  status, Doc, Gjahr, DocEstorno;
+
+  field ( mandatory : create, readonly : update ) Bukrs, Kunnr, Ncheque;
+
+  determination setStatusIni on modify { create; }
+
+  mapping for ztfi_cust_cheque
+  {
+    bukrs = bukrs;
+    kunnr = kunnr;
+    ncheque = ncheque;
+    budat = budat;
+    ncontrato = ncontrato;
+    ncontratojuridico = ncontratojuridico;
+    bupla = bupla;
+    zterm = zterm;
+    nchamado = nchamado;
+    valor = valor;
+    moeda = moeda;
+    status = status;
+  }
+}

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SXCI" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SXCI>
+    <IMPLEMENTATION_DATA>
+     <IMP_NAME>ZEIDMS_DOC_OBJ_RBKP</IMP_NAME>
+     <TEXT>Tela para Documentos de Faturamento</TEXT>
+     <IMP_CLASS>ZCL_IM_EIDMS_DOC_OBJ_RBKP</IMP_CLASS>
+     <EXIT_NAME>DOCUMENT_OBJ</EXIT_NAME>
+     <INTER_NAME>IF_EX_DOCUMENT_OBJ</INTER_NAME>
+     <ACTIVE>X</ACTIVE>
+    </IMPLEMENTATION_DATA>
+    <SCREENS>
+     <item>
+      <EXIT_NAME>DOCUMENT_OBJ</EXIT_NAME>
+      <SCR_A_PROG>SAPLCV100</SCR_A_PROG>
+      <SCR_A_NUM>1500</SCR_A_NUM>
+      <SCR_A_SSCR>SUB_OBJ</SCR_A_SSCR>
+      <SCR_P_PROG>SAPLZFGDMS_LINK_RBKP</SCR_P_PROG>
+      <SCR_P_NUM>9000</SCR_P_NUM>
+      <IMP_NAME>ZEIDMS_DOC_OBJ_RBKP</IMP_NAME>
+      <SPRSL>E</SPRSL>
+      <SCR_TEXT>Find Document</SCR_TEXT>
+     </item>
+     <item>
+      <EXIT_NAME>DOCUMENT_OBJ</EXIT_NAME>
+      <SCR_A_PROG>SAPLCV130</SCR_A_PROG>
+      <SCR_A_NUM>1500</SCR_A_NUM>
+      <SCR_A_SSCR>SUB_OBJ</SCR_A_SSCR>
+      <SCR_P_PROG>SAPLZFGDMS_LINK_RBKP</SCR_P_PROG>
+      <SCR_P_NUM>9000</SCR_P_NUM>
+      <IMP_NAME>ZEIDMS_DOC_OBJ_RBKP</IMP_NAME>
+      <SPRSL>E</SPRSL>
+      <SCR_TEXT>Edit Object Links</SCR_TEXT>
+     </item>
+    </SCREENS>
+    <FILTERS>
+     <item>
+      <FLT_VAL>RBKP</FLT_VAL>
+     </item>
+    </FILTERS>
+   </SXCI>
+  </asx:values>
+ </asx:abap>
+</abapGit>

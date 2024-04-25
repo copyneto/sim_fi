@@ -1,0 +1,40 @@
+@Metadata.layer: #CUSTOMER
+
+annotate entity C_CreditDecisionDocumentTP with
+{
+
+  @UI.lineItem:         [{ position: 41 }]
+  @UI.fieldGroup:       [{ position: 31, qualifier: 'MainData' }]
+  @UI.selectionField:   [{ position: 21 }]
+  @UI.textArrangement:  #TEXT_LAST
+  SalesDocApprovalStatus;
+
+  @UI.hidden: true
+  SalesDocApprovalStatusDesc;
+
+  @UI.lineItem:         [{ position: 42 }]
+  @UI.fieldGroup:       [{ position: 32, qualifier: 'MainData' }]
+  @UI.selectionField:   [{ position: 22 }]
+  @UI.textArrangement:  #TEXT_LAST
+  OverallSDDocumentRejectionSts;
+
+  @UI.hidden: true
+  OvrlSDDocumentRejectionStsDesc;
+
+  @UI.lineItem:         [{ position: 43 }]
+  @UI.fieldGroup:       [{ position: 33, qualifier: 'MainData' }]
+  @UI.selectionField:   [{ position: 23 }]
+  @UI.textArrangement:  #TEXT_LAST
+  PaymentMethod;
+  
+  @UI.hidden: true
+  PaymentMethodDescription;
+  
+//  CustomerPaymentTerms;
+  
+  @UI.hidden: true
+  CustomerPaymentTermsName;
+  
+//  SalesOrderCondition;
+
+}

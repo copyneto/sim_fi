@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition - FIDC'
+define service ZUI_FIDC {
+  expose ZC_FI_FIDC;
+}

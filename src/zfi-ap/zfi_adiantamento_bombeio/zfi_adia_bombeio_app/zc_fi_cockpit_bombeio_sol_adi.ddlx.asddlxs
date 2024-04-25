@@ -1,0 +1,126 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { typeName: 'Documento',
+                  typeNamePlural: 'Documentos',
+                  title: { type: #STANDARD, value: 'TextKey' } }
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'FiscalYear', direction:  #DESC },
+                                        { by: 'AccountingDocument', direction:  #DESC },
+                                        { by: 'AccountingDocumentItemNo', direction:  #ASC }] }]
+
+annotate view ZC_FI_COCKPIT_BOMBEIO_SOL_ADI with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [ { id:            'SolicitacaoAdiantamento',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Solicitação',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Buttons information
+  // ------------------------------------------------------
+
+  @UI.lineItem:         [{ position: 10, type: #FOR_ACTION, dataAction: 'liberar', label: 'Liberar Solicitação' },
+                         { position: 20, type: #FOR_ACTION, dataAction: 'estornar', label: 'Estornar Solicitação' },
+                         { position: 30, type: #FOR_ACTION, dataAction: 'ajustar', label: 'Ajustar Solicitação' }]
+
+  @UI.identification:   [{ position: 10, type: #FOR_ACTION, dataAction: 'liberar', label: 'Liberar Solicitação' },
+                         { position: 20, type: #FOR_ACTION, dataAction: 'estornar', label: 'Estornar Solicitação' },
+                         { position: 30, type: #FOR_ACTION, dataAction: 'ajustar', label: 'Ajustar Solicitação' }]
+
+   // ------------------------------------------------------
+   // Field information
+   // ------------------------------------------------------
+
+  @UI.hidden: true
+  TextKey;
+
+  @UI.hidden: true
+  CompanyCode;
+
+  @Consumption.semanticObject:'AccountingDocument'
+  @UI.lineItem:        [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  AccountingDocument;
+
+  @UI.lineItem:        [{ position: 20 }]
+  @UI.identification:  [{ position: 20 }]
+  AccountingDocumentItemNo;
+
+  @UI.lineItem:        [{ position: 30 }]
+  @UI.identification:  [{ position: 30 }]
+  FiscalYear;
+
+  //  AccountingDocumentCategory;
+
+  @UI.hidden: true
+  AccountingDocumentCategoryName;
+
+  //  SpecialGLCode;
+
+  @UI.hidden: true
+  SpecialGLCodeName;
+
+  //  PostingKey;
+
+  @UI.hidden: true
+  PostingKeyName;
+
+  @UI.lineItem:        [{ position: 40 }]
+  @UI.identification:  [{ position: 40 }]
+  PaymentBlockingReason;
+
+  @UI.hidden: true
+  PaymentBlockingReasonName;
+
+  @UI.lineItem:        [{ position: 50 }]
+  @UI.identification:  [{ position: 50 }]
+  Supplier;
+
+  @UI.hidden: true
+  SupplierName;
+
+  @UI.lineItem:        [{ position: 60 }]
+  @UI.identification:  [{ position: 60 }]
+  NetDueDate;
+
+  -- Campo necessário para preencher automaticamente o pop-up. Iremos esconder no Fiori
+  @UI.lineItem:        [{ position: 999 }]
+  NetDueDateNew;
+
+  @UI.lineItem:        [{ position: 70 }]
+  @UI.identification:  [{ position: 70 }]
+  BusinessPlace;
+
+  @UI.hidden: true
+  BusinessPlaceDescription;
+
+  @UI.lineItem:        [{ position: 80 }]
+  @UI.identification:  [{ position: 80 }]
+  HouseBank;
+
+  @UI.hidden: true
+  HouseBankName;
+
+  //  PaymentMethod;
+
+  @UI.hidden: true
+  PaymentMethodDescription;
+
+  @UI.lineItem:        [{ position: 90 }]
+  @UI.identification:  [{ position: 90 }]
+  DocumentReferenceID;
+
+  @UI.lineItem:        [{ position: 100 }]
+  @UI.identification:  [{ position: 100 }]
+  Amount;
+  
+  -- Campo necessário para preencher automaticamente o pop-up. Iremos esconder no Fiori
+  @UI.lineItem:        [{ position: 999 }]
+  AmountNew;
+
+}

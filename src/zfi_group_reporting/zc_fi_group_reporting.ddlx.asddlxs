@@ -1,0 +1,47 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: { typeName: 'Group',
+                     typeNamePlural: 'Groups' } }
+
+annotate view ZC_FI_GROUP_REPORTING with
+{
+
+  @UI.facet: [ {
+                 id:              'HeaderGroup',
+                 type:            #IDENTIFICATION_REFERENCE,
+                 targetQualifier: 'HeaderModulo',
+                 position:        10  } ]
+
+  @UI.lineItem:       [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  Rldnr;
+  @UI.lineItem:       [{ position: 40 }]
+  @UI.selectionField: [{ position: 40 }]
+  Rdimen;
+  @UI.lineItem:       [{ position: 50 }]
+  @UI.selectionField: [{ position: 50 }]
+  Ryear;
+  @UI.lineItem:       [{ position: 60 }]
+  @UI.selectionField: [{ position: 60 }]
+  Docnr;
+  @UI.lineItem:       [{ position: 70 },
+                                 { type: #FOR_ACTION, dataAction: 'equalizar', label: 'Estornar/Equalizar',  invocationGrouping: #CHANGE_SET }]
+  @UI.selectionField: [{ position: 70 }]
+  Docln;
+  @UI.lineItem:       [{ position: 80 }]
+//  @UI.selectionField: [{ position: 80 }]
+  Poper;
+  @UI.lineItem:       [{ position: 90 }]
+//  @UI.selectionField: [{ position: 90 }]
+  Ritclg;
+  @UI.lineItem:       [{ position: 100 }]
+//  @UI.selectionField: [{ position: 100 }]
+  Rbunit;
+  //  @UI.lineItem:       [{ position: 10 }]
+  //  @UI.selectionField: [{ position: 10 }]
+  //  @EndUserText.label: 'Status'
+  //  status;
+  //  @UI.lineItem:       [ { position: 20 } ]
+  //  @UI.selectionField: [{ position: 20 } ]
+  //  @EndUserText.label: 'Mensagem'
+  //  message;
+}

@@ -1,0 +1,53 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_FI_COCKPIT_BOMBEIO alias Bombeio
+{
+
+  use association _SolicitacaoAdiantamento;
+  use association _Pedido;
+  use association _AdiaPagos;
+  use association _DevolucaoCancelamento;
+  use association _FaturaDRC;
+  use association _Faturas;
+}
+
+define behavior for ZC_FI_COCKPIT_BOMBEIO_SOL_ADI alias SolicitacaoAdiantamento
+{
+  use action liberar;
+  use action estornar;
+  use action ajustar;
+
+  use association _Bombeio;
+}
+
+define behavior for ZC_FI_COCKPIT_BOMBEIO_PED alias Pedido
+{
+
+  use association _Bombeio;
+}
+
+
+define behavior for ZC_FI_COCKPIT_BOMBEIO_ADI_PAG alias AdiantamentoPagamento
+{
+
+  use association _Bombeio;
+}
+
+define behavior for ZC_FI_COCKPIT_BOMBEIO_DEV_CAN alias DevolucaoCancelamento
+{
+
+  use association _Bombeio;
+}
+
+define behavior for ZC_FI_COCKPIT_BOMBEIO_FAT_DRC alias FaturaDRC
+{
+
+  use association _Bombeio;
+}
+
+define behavior for ZC_FI_COCKPIT_BOMBEIO_FAT alias Faturas
+{
+
+  use association _Bombeio;
+}

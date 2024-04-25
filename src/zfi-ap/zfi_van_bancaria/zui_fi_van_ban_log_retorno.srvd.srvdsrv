@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition log de retorno'
+define service ZUI_FI_VAN_BAN_LOG_RETORNO {
+  expose ZC_FI_VAN_BAN_LOG_RETORNO;
+}

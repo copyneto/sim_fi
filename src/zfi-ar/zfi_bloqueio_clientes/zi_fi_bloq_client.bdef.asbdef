@@ -1,0 +1,28 @@
+managed implementation in class zclfi_bloq_client unique;
+strict ( 2 );
+
+define behavior for ZI_FI_BLOQ_CLIENT alias Bloq
+persistent table ztfi_bloq_client
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) DataCriacao, DataModif, UsuarioCriacao, UsuarioModif;
+  field ( readonly : update ) Cliente;
+
+  validation validaCliente   on save { field Cliente; create; }
+
+  mapping for ZTFI_BLOQ_CLIENT
+  {
+    Cliente        = cliente;
+    Dias           = dias;
+    UsuarioCriacao = usuario_criacao;
+    DataCriacao    = data_criacao;
+    UsuarioModif   = usuario_modif;
+    DataModif      = data_modif;
+  }
+}

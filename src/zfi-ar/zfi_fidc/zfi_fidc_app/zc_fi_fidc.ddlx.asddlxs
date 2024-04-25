@@ -1,0 +1,114 @@
+@Metadata.layer: #CORE
+
+@UI.lineItem:[{ criticality: 'criticality' }]
+annotate view ZC_FI_FIDC with
+{
+  @UI.selectionField: [{ position: 10 }]
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_ACCOUNTINGDOCUMENTSTDVH', element: 'CompanyCode' }, additionalBinding: [{ element: 'AccountingDocument', localElement: 'Belnr' }, { element: 'FiscalYear', localElement: 'Gjahr' }] }]
+  @UI.lineItem: [{ position: 10 }]
+  Bukrs;
+  @UI.hidden: true
+  CompanyCodeName;
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_ACCOUNTINGDOCUMENTSTDVH', element: 'AccountingDocument' }, additionalBinding: [{ element: 'CompanyCode', localElement: 'Bukrs' }, { element: 'FiscalYear', localElement: 'Gjahr' }] }]
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  Belnr;
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_CUSTOMER_VH', element: 'Customer' } }]
+  @UI.lineItem: [{ position: 23 }]
+  @UI.selectionField: [{ position: 23 }]
+  kunnr;
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'I_ACCOUNTINGDOCUMENTSTDVH', element: 'AccountingDocument' }, additionalBinding: [{ element: 'CompanyCode', localElement: 'Bukrs' }, { element: 'FiscalYear', localElement: 'Gjahr' }] }]
+  @UI.lineItem: [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  Gjahr;
+  @UI.lineItem: [{ position: 40 }]
+  Buzei;
+  @UI.lineItem: [{ position: 50 }]
+  Nossonumero;
+  @UI.lineItem: [{ position: 55, label: 'Nome Arq. Remessa' }]
+  NomeArqRem;
+  @UI.lineItem: [{ position: 60 }]
+  Status;
+  @UI.lineItem: [{ position: 70 }]
+  DataRemessa;
+  @UI.lineItem: [{ position: 80 }]
+  HoraRemessa;
+  @UI.lineItem: [{ position: 90 }]
+  DataRetorno;
+  @UI.lineItem: [{ position: 100 }]
+  HoraRetorno;
+  @UI.lineItem: [{ position: 110 }]
+  TituloCob;
+  @UI.lineItem: [{ position: 120 }]
+  TituloBukrs;
+
+  @UI.hidden: true
+  criticality;
+
+  @UI.lineItem: [{ position: 130 }]
+  TipoStatus;
+  @UI.lineItem: [{ position: 140 }]
+  @UI.selectionField: [{ position: 40 }]
+  Aceito;
+  @UI.lineItem: [{ position: 160 }]
+  GjahrCob;
+  @UI.lineItem: [{ position: 162 }]
+  DocComp;
+  @UI.lineItem: [{ position: 170 }]
+  MotRecusa;
+  @UI.lineItem: [{ position: 180 }]
+  DataRecompra;
+  @UI.lineItem: [{ position: 190 }]
+  ValorCessao;
+  @UI.lineItem: [{ position: 200 }]
+  TaxaCessao;
+  @UI.lineItem: [{ position: 210 }]
+  ValorDesco;
+  @UI.lineItem: [{ position: 220 }]
+  Areacredito;
+  @UI.lineItem: [{ position: 230 }]
+  Divisao;
+  @UI.lineItem: [{ position: 240 }]
+  Nf;
+  @UI.lineItem: [{ position: 242 }]
+  Chave;
+  @UI.hidden: true
+  Moeda;
+  @UI.lineItem: [{ position: 250 }]
+  Valor;
+  @UI.lineItem: [{ position: 260 }]
+  DataEmissaoNF;
+  @UI.lineItem: [{ position: 270 }]
+  CNPJEmissor;
+  @UI.lineItem: [{ position: 280 }]
+  NomeCliente;
+  @UI.lineItem: [{ position: 290 }]
+  CNPJCliente;
+  @UI.lineItem: [{ position: 300 }]
+  TELEFONE1;
+  @UI.lineItem: [{ position: 310 }]
+  TELEFONE2;
+  @UI.lineItem: [{ position: 320 }]
+  DocNum;
+  @UI.lineItem: [{ position: 320 }]
+  EndCliente;
+  @UI.lineItem: [{ position: 330 }]
+  CompEnd;
+  @UI.lineItem: [{ position: 340 }]
+  Bairro;
+  @UI.lineItem: [{ position: 350 }]
+  Cidade;
+  @UI.lineItem: [{ position: 360 }]
+  UF;
+  @UI.lineItem: [{ position: 370 }]
+  CEP;
+  @UI.lineItem: [{ position: 380 }]
+  ValorNF;
+  @UI.lineItem: [{ position: 390 }]
+  Vencimento;
+  @UI.lineItem: [{ position: 400 }]
+  Email1;
+  @UI.lineItem: [{ position: 410 }]
+  Email2;
+
+}

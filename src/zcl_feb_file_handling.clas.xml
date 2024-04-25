@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_FEB_FILE_HANDLING</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Main Logic for File Processing</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <RSTAT>P</RSTAT>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>BS1</KEY>
+     <ENTRY>Bank Statement Processing</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>BS1</KEY>
+       <ENTRY>Kontoauszugsverarbeitung</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>BS1</KEY>
+       <ENTRY>Processamento do extrato de conta</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>BS1</KEY>
+       <ENTRY>Procesamiento de extracto de cuenta</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>AUTOMATIC_PROCESSING</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Processing after Upload of a Log. Bank Statement</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BANK_STATEMENT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Bank Statement Specific Processing</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_KUKEY_IN_FEBKO</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Check Whether KUKEY stored in FEBKO</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_ANWND</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Application using bank data storage</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_DETLEVEL1</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Detail Level Job Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_DETLEVEL2</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Detail Level Job Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_DETLEVEL3</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Detail Level for Application Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_DETLEVEL4</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Detail Level for Application Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_DETLEVEL5</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Detail Level for Application Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_DETLEVEL6</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Detail Level for Application Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>C_FORMAT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Electronic Bank Statement Format</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EXPORT_TO_MEMORY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Export KUKEY</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>FREE_MEMORY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Delete Memory</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IMPORT_FROM_MEMORY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Import KUKEY</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INITIALIZE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Import of Customizing</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Main Logic for File Processing</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PREPROCESSING</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Processing Before Upload of a Log. Bank Statement</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PRINT_BNK_STMNT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Print Bank Statement</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_TRANSFER_DETAILS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Save information about transferred files</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SHIFT_MSG_VARIABLE</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Moves the final part of a long field to MSG variable</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>S_CONTROL_MAIN_PATHS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Information about Import for Electronic Bank Statement</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>S_POSTING_PARAMETER</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>House Bank Account Specific Posting Settings</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>S_PRINTPARAM</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Print Parameter</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_CONTROL_MAIN_PATHS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Source Files with Bank Statements</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_FEB_KEYS</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Collected KUKEYS for Log</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_MANSP</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Dunning Blocks</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_NOTT028G</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>External Transactions not in T028G</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_RANGE_KUKEY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Range for Kukeys</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_RANGE_KUKEY_PRINT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>KUKEYs for Bank Statement Print</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_SAVE_BNKSTMT_RESULT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Result of Bank Statement Upload</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_SELOPT_BELNR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Select Options BELNR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>T_SELOPT_XBLNR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Select Options XBLNR</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>X_EXECPRI</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Import Bank Statement</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>X_FILEUPL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>File Upload Indicator</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>X_INTRADAY</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Intraday Processing Indicator</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>X_SCHEDMAN_ERR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Error</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>X_SIMULATION</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Flag Simulation</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>X_VGEXT_OK</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Transactions in T028G</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>AUTOMATIC_PROCESSING</CMPNAME>
+     <SCONAME>AUTOMATIC_PROCESSING_FAILED</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>An error occurred following the upload</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>AUTOMATIC_PROCESSING</CMPNAME>
+     <SCONAME>IS_STATEMENT_KEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Bank Statement Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BANK_STATEMENT</CMPNAME>
+     <SCONAME>IS_BANK_STATEMENT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Logical Files</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BANK_STATEMENT</CMPNAME>
+     <SCONAME>IV_FILENAME</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Physical File Name</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_KUKEY_IN_FEBKO</CMPNAME>
+     <SCONAME>EX_EXIST</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Data Element for BOOLE Domain: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_KUKEY_IN_FEBKO</CMPNAME>
+     <SCONAME>IV_KUKEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Short key (surrogate)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EXPORT_TO_MEMORY</CMPNAME>
+     <SCONAME>EXPORT_FAILED</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Export Failed</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IMPORT_FROM_MEMORY</CMPNAME>
+     <SCONAME>IV_KUKEY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Short key (surrogate)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IMPORT_FROM_MEMORY</CMPNAME>
+     <SCONAME>NO_KUKEY_FOUND</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>No KUKEY Found</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>INITIALIZE</CMPNAME>
+     <SCONAME>IT_SEL_OPT_INPUT_PATH</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Selection Options</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>C_SCHEDMAN_ERR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Single-Character Indicator</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>ET_LOG_HANDLE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Application Log: Log Handle Table</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>ET_SAVE_BNKSTMT_RESULT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Result of Bank Statement Upload</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>IS_PRINTPARAM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Print Parameter</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>IT_SEL_OPT_INPUT_PATH</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Character String 60</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>IV_BANK_STATEMENT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Bank Statement as String</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>IV_EXECPRI</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Import Bank Statement</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>IV_FORMAT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Electronic Bank Statement Format</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>IV_FORMAT_LONG</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Format for Electronic Bank Statement</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>IV_FORMAT_PARAM</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Format Parameters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>IX_SIMULATION</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Flag Simulation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>STATEMENT_MESSAGE_EMPTY</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Bank Statement Message is Empty</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MAIN</CMPNAME>
+     <SCONAME>X_STATEMENT_ERROR</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Application Log Contains Error Messages</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PREPROCESSING</CMPNAME>
+     <SCONAME>PREPROCESSING_FAILED</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Error occurred before upload</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PRINT_BNK_STMNT</CMPNAME>
+     <SCONAME>PRINT_BNK_STMNT_FAILED</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Bank Statement Print Failed</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_TRANSFER_DETAILS</CMPNAME>
+     <SCONAME>CREATE_GUID_FAILED</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Error when Creating a GUID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_TRANSFER_DETAILS</CMPNAME>
+     <SCONAME>IS_BANK_STATEMENT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Logical Files</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_TRANSFER_DETAILS</CMPNAME>
+     <SCONAME>IV_BANKS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Bank Country Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_TRANSFER_DETAILS</CMPNAME>
+     <SCONAME>IV_BUKRS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Company Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_TRANSFER_DETAILS</CMPNAME>
+     <SCONAME>IV_FILENAME</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Physical File Name</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_TRANSFER_DETAILS</CMPNAME>
+     <SCONAME>IV_HBKID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>House bank ID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_TRANSFER_DETAILS</CMPNAME>
+     <SCONAME>IV_HKTID</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>ID for Account Details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_TRANSFER_DETAILS</CMPNAME>
+     <SCONAME>IV_TRANPATH</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Logical Path Name for Transfer</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_MSG_VARIABLE</CMPNAME>
+     <SCONAME>EV_MSGV1</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Message Variable</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_MSG_VARIABLE</CMPNAME>
+     <SCONAME>EV_MSGV2</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Message Variable</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_MSG_VARIABLE</CMPNAME>
+     <SCONAME>IV_LONG_INPUT</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Case-Sensitive Work Area</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

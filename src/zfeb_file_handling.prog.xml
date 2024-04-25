@@ -1,0 +1,990 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_PROG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <PROGDIR>
+    <NAME>ZFEB_FILE_HANDLING</NAME>
+    <SUBC>1</SUBC>
+    <APPL>F</APPL>
+    <RSTAT>P</RSTAT>
+    <RLOAD>D</RLOAD>
+    <FIXPT>X</FIXPT>
+    <UCCHECK>X</UCCHECK>
+   </PROGDIR>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>001</KEY>
+     <ENTRY>File Specs</ENTRY>
+     <LENGTH>12</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Output Control</ENTRY>
+     <LENGTH>100</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>Bank Statement Processing Report FEB_FILE_HANDLING</ENTRY>
+     <LENGTH>132</LENGTH>
+    </item>
+    <item>
+     <ID>R</ID>
+     <ENTRY>Bank Statement Processing: Import and Forward (Automatically)</ENTRY>
+     <LENGTH>70</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_BUPRO</KEY>
+     <ENTRY>Print Posting Log</ENTRY>
+     <LENGTH>33</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_KOAUSZ</KEY>
+     <ENTRY>Print Bank Statement</ENTRY>
+     <LENGTH>28</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_STATIK</KEY>
+     <ENTRY>Print Statistics</ENTRY>
+     <LENGTH>27</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>PA_LSEPA</KEY>
+     <ENTRY>.</ENTRY>
+     <LENGTH>22</LENGTH>
+     <SPLIT>D</SPLIT>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>T_SEL_OP</KEY>
+     <ENTRY>.</ENTRY>
+     <LENGTH>38</LENGTH>
+     <SPLIT>D</SPLIT>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Dateiangaben</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Ausgabesteuerung</ENTRY>
+       <LENGTH>100</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Processar Erros:</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>099</KEY>
+       <ENTRY>Processar erros:</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>Kontoauszugsverarbeitung: Einlesen und Weiterleiten (automatisch)</ENTRY>
+       <LENGTH>65</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PA_LSEPA</KEY>
+       <ENTRY>.</ENTRY>
+       <LENGTH>22</LENGTH>
+       <SPLIT>D</SPLIT>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_BUPRO</KEY>
+       <ENTRY>Buchungsprotokoll drucken</ENTRY>
+       <LENGTH>33</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_ERROR</KEY>
+       <ENTRY>Processar arquivos com erro.</ENTRY>
+       <LENGTH>36</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_KOAUSZ</KEY>
+       <ENTRY>Kontoauszug drucken</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_STATIK</KEY>
+       <ENTRY>Statistik drucken</ENTRY>
+       <LENGTH>27</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>T_SEL_OP</KEY>
+       <ENTRY>.</ENTRY>
+       <LENGTH>38</LENGTH>
+       <SPLIT>D</SPLIT>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Dados file</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Controle de saída</ENTRY>
+       <LENGTH>100</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Processamento do extrato bancário report FEB_FILE_HANDLING</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>099</KEY>
+       <ENTRY>Processar erros:</ENTRY>
+       <LENGTH>30</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>Processamento do extrato de conta: importar e transferir (automático)</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_BUPRO</KEY>
+       <ENTRY>Imprimir log de lançamento</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_ERROR</KEY>
+       <ENTRY>Processar arquivos com erro.</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_KOAUSZ</KEY>
+       <ENTRY>Imprimir extrato de conta</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_STATIK</KEY>
+       <ENTRY>Imprimir estatística</ENTRY>
+       <LENGTH>38</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PA_LSEPA</KEY>
+       <ENTRY>.</ENTRY>
+       <LENGTH>22</LENGTH>
+       <SPLIT>D</SPLIT>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>T_SEL_OP</KEY>
+       <ENTRY>.</ENTRY>
+       <LENGTH>38</LENGTH>
+       <SPLIT>D</SPLIT>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>001</KEY>
+       <ENTRY>Dat.fichero</ENTRY>
+       <LENGTH>12</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Control de salida</ENTRY>
+       <LENGTH>100</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Tratamiento de extracto bancario, report FEB_FILE_HANDLING</ENTRY>
+       <LENGTH>132</LENGTH>
+      </item>
+      <item>
+       <ID>R</ID>
+       <ENTRY>Procesamiento de extracto de cuenta: Cargar y transmitir (automática)</ENTRY>
+       <LENGTH>70</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_BUPRO</KEY>
+       <ENTRY>Imprimir log de contabiliz.</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_KOAUSZ</KEY>
+       <ENTRY>Imprimir extracto de cuenta</ENTRY>
+       <LENGTH>35</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>P_STATIK</KEY>
+       <ENTRY>Imprimir estadísticas</ENTRY>
+       <LENGTH>29</LENGTH>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>PA_LSEPA</KEY>
+       <ENTRY>.</ENTRY>
+       <LENGTH>22</LENGTH>
+       <SPLIT>D</SPLIT>
+      </item>
+      <item>
+       <ID>S</ID>
+       <KEY>T_SEL_OP</KEY>
+       <ENTRY>.</ENTRY>
+       <LENGTH>38</LENGTH>
+       <SPLIT>D</SPLIT>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <LONGTEXTS>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZFEB_FILE_HANDLING</OBJECT>
+      <LANGU>D</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0008</VERSION>
+      <MASTERLANG>X</MASTERLANG>
+      <TXTLINES>00033</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZFEB_FILE_HANDLING</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>D</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00008</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Sie verwenden diesen Report, um Kontoauszüge automatisch in das</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>SAP-System einzulesen und weiterzuleiten. Der Report liest die</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Kontoauszugsdateien aus den Verzeichnissen des Applikationsservers und</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>kann daher regelmäßig im Hintergrund eingeplant werden.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Entsprechend Ihrer Einstellungen im Customizing unter</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:CHAP.SIMG_CMMENUOFTDGE&gt;Elektronischer Kontoauszug -&gt; Einstellungen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>für den Datenimport&lt;/&gt;  verarbeitet das System die eingelesenen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Kontoauszüge bzw. leitet sie weiter.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Folgende Formate werden unterstützt:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>MT940, MT942</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>BAI</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>XML-Formate CAMT.053.001.02 und CAMT.054.001.02</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Für nicht unterstützte Formate oder ein Einlesen vom Frontend (PC)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>nutzen Sie den Report &lt;LS&gt;Kontoauszug: Diverse Formate (SWIFT,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>MultiCash, BAI...)&lt;/&gt; (RFEBKA00), den Sie über die Transaktion FF_5</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>aufrufen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Sie können den Report auch im Schedule Manager (Transaktion &lt;LB&gt;SCMA&lt;/&gt;)</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>als Job einplanen.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Weitere Informationen über die &lt;LS&gt;Benutzung des Schedulers&lt;/&gt; finden</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Sie in der SAP-Bibliothek für SAP ERP Central Component unter</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;LS&gt;Anwendungsübergreifende Funktionen in SAP ERP&lt;/&gt; -&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;LS&gt;Anwendungsübergreifende Komponenten&lt;/&gt; -&gt; &lt;LS&gt;Allgemeine</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Anwendungsfunktionen&lt;/&gt; -&gt; &lt;LS&gt;Schedule Manager (CA)&lt;/&gt;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Sie haben die erforderlichen Einstellungen im Customizing unter</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE> &lt;DS:CHAP.SIMG_CMMENUOFTDGE&gt;Elektronischer Kontoauszug -&gt; Einstellungen</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>für den Datenimport&lt;/&gt; durchgeführt.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Neue Formate können mit dem Business Add-In</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE> &lt;DS:SIMG.FEB_BSIMP_BANK_STATEMENT&gt;BAdI: Kontoauszugsverarbeitung&lt;/&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>implementiert werden.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZFEB_FILE_HANDLING</OBJECT>
+      <LANGU>E</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0008</VERSION>
+      <TXTLINES>00026</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZFEB_FILE_HANDLING</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>E</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00008</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>You use this report to import and forward bank statements into the SAP</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>system automatically. It imports the bank statement files from the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>application server directories, and therefore can be scheduled to run in</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>the background at regular intervals.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Depending on your settings in Customizing under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;DS:CHAP.SIMG_CMMENUOFTDGE&gt;Electronic Bank Statement -&gt; Settings for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Data Import&lt;/&gt;, the system either processes the imported bank statements</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>or forwards then on.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>The following formats are supported:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>MT940, MT942</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>BAI</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>XML formats camt.053.001.02 and camt.054.001.02</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>For formats that are not supported or an import from the front end (PC),</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>use report &lt;LS&gt;Bank Statement: Various Formats (SWIFT, MultiCash,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>BAI...)&lt;/&gt; (RFEBKA00), which you call up using transaction FF_5.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>You can also schedule the report as a job in the Schedule Manager</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(transaction &lt;LB&gt;SCMA&lt;/&gt;).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>For more information about the &lt;LS&gt;Use of the Scheduler&lt;/&gt;, see the SAP</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Library for SAP ERP Central Component under &lt;LS&gt;Cross-Application</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Functions in SAP ERP&lt;/&gt; -&gt; &lt;LS&gt;Cross-Application Components&lt;/&gt; -&gt; &lt;LS&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>General Application Functions&lt;/&gt; -&gt; &lt;LS&gt;Schedule Manager (CA)&lt;/&gt;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>You have made the required settings in Customizing under</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;DS:CHAP.SIMG_CMMENUOFTDGE&gt;Electronic Bank Statement -&gt; Settings for the</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Data Import&lt;/&gt;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>New formats can be implemented with Business Add-In</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;DS:SIMG.FEB_BSIMP_BANK_STATEMENT&gt;BAdI: Bank Statement Processing&lt;/&gt;.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZFEB_FILE_HANDLING</OBJECT>
+      <LANGU>P</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0008</VERSION>
+      <TXTLINES>00029</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZFEB_FILE_HANDLING</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>P</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00008</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Utilize este report para importar e transferir extratos de conta</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>automaticamente para o sistema SAP. Esse Report lê os files do extrato</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>de conta dos diretórios do server de aplicação e, por isso, pode ser</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>planejado regularmente em background.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Conforme as suas configurações no customizing em</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>&lt;DS:CHAP.SIMG_CMMENUOFTDGE&gt;Extrato de conta eletrônico -&gt; Configurações</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>para a importação de dados&lt;/&gt;, o sistema processa os extratos de conta</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>importados ou os transfere.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Os seguintes formatos são suportados:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>MT940, MT942</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>BAI</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>formatos XML CAMT.053.001.02 e CAMT.054.001.02</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Para os formatos não suportados ou a importação de front end (PC),</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>utilize o report &lt;LS&gt;Extrato de conta: Formatos diversos (SWIFT,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>MultiCash, BAI...)&lt;/&gt; (RFEBKA00), que você chama através da transação</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>FF_5.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Você pode também planejar o report em Schedule Manager (Transação &lt;LB&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>SCMA&lt;/&gt;) como job.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Maiores informações sobre a &lt;LS&gt;Utilização de Schedule&lt;/&gt; encontram-se</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>na biblioteca SAP para  SAP ERP Central Component em &lt;LS&gt;Funções válidas</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>para várias aplicações em SAP ERP&lt;/&gt; -&gt; &lt;LS&gt; Componentes válidos para</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>várias aplicações&lt;/&gt; -&gt; &lt;LS&gt;Funções gerais de aplicação&lt;/&gt; -&gt; &lt;LS&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>=</TDFORMAT>
+       <TDLINE>Schedule Manager (CA)&lt;/&gt;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Você executou as configurações necessárias no customizing em</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;DS:CHAP.SIMG_CMMENUOFTDGE&gt;Extrato de conta eletrônico -&gt; Configurações</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>para a importação de dados&lt;/&gt;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Novos formatos podem ser implementados com o Business Add-In</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;DS:SIMG.FEB_BSIMP_BANK_STATEMENT&gt;BAdI:  processamento do extrato de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>conta&lt;/&gt;.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+    <item>
+     <DOKIL>
+      <ID>RE</ID>
+      <OBJECT>ZFEB_FILE_HANDLING</OBJECT>
+      <LANGU>S</LANGU>
+      <TYP>E</TYP>
+      <VERSION>0008</VERSION>
+      <TXTLINES>00027</TXTLINES>
+      <DOKSTATE>A</DOKSTATE>
+     </DOKIL>
+     <HEAD>
+      <TDOBJECT>DOKU</TDOBJECT>
+      <TDNAME>ZFEB_FILE_HANDLING</TDNAME>
+      <TDID>RE</TDID>
+      <TDSPRAS>S</TDSPRAS>
+      <TDFORM>S_DOCU_SHOW</TDFORM>
+      <TDSTYLE>S_DOCUS1</TDSTYLE>
+      <TDVERSION>00008</TDVERSION>
+      <TDLINESIZE>072</TDLINESIZE>
+     </HEAD>
+     <LINES>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PURPOSE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Utilice este informes para leer y transmitir automáticamente extractos</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>de cuenta al sistema SAP. El informe lee los ficheros de extractos de</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>cuenta de los directorios del servidor de aplicación y por eso puede</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>planificarse regularmente en proceso de fondo.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Segúns sus parametrizaciones en el Customizing bajo</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;DS:CHAP.SIMG_CMMENUOFTDGE&gt;Extracto de cuenta electrónico-&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Parametrizaciones para importación de datos&lt;/&gt;, el sistema procesa o</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>transmite los extractos de cuenta leídos.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Se soportan los siguientes formatos:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>MT940, MT942</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>BAI</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>B1</TDFORMAT>
+       <TDLINE>Formatos XML CAMT.053.001.02 y CAMT.054.001.02</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Para formatos que no se soportan o para leer el Frontend (PC), utilice</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>el informe  &lt;LS&gt;Extracto de cuenta: Varios formatos (SWIFT, MultiCash,</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>BAI...)&lt;/&gt; (RFEBKA00), que se llaman mediante la transacción FF_5.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;INTEGRATION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>También puede planificar como función el informe en el Schedule Manager</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>(transacción &lt;LB&gt;SCMA&lt;/&gt;).</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Encontrará más información acetca del &lt;LS&gt;uso del Scheduler&lt;/&gt; en la</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Biblioteca SAP para SAP ERP Central Component bajo  &lt;LS&gt;Funciones</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>generales de todas las aplicaciones en SAP ERP&lt;/&gt; -&gt; &lt;LS&gt;Componentes</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>generales de todas las aplicaciones &lt;/&gt; -&gt; &lt;LS&gt;Funciones de aplicación</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>generales&lt;/&gt; -&gt; &lt;LS&gt;Schedule Manager (CA)&lt;/&gt;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;PREREQUISITES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Habrá realizado las parametrizaciones necesarias en el Customizing bajo</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>&lt;DS:CHAP.SIMG_CMMENUOFTDGE&gt;Extracto de cuenta electrónico-&gt;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Parametrizaciones para la importación de datos&lt;/&gt;.</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;FEATURES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SELECTION&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;STANDARD_VARIANTS&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;OUTPUT&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;ACTIVITIES&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U1</TDFORMAT>
+       <TDLINE>&amp;EXAMPLE&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>U2</TDFORMAT>
+       <TDLINE>&amp;SYS_ADMIN&amp;</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDFORMAT>AS</TDFORMAT>
+       <TDLINE>Con el add in empresarial &lt;DS:SIMG.FEB_BSIMP_BANK_STATEMENT&gt;BAdI:</TDLINE>
+      </TLINE>
+      <TLINE>
+       <TDLINE>Tratamiento de extractos de cuenta&lt;/&gt; puede implementar nuevos formatos.</TDLINE>
+      </TLINE>
+     </LINES>
+    </item>
+   </LONGTEXTS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

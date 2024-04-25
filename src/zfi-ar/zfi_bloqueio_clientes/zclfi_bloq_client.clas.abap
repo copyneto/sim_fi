@@ -1,0 +1,5 @@
+CLASS zclfi_bloq_client DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_bloq_client.
+ENDCLASS.
+
+CLASS zclfi_bloq_client IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,70 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { typeName: 'Documento',
+                  typeNamePlural: 'Documentos',
+                  title: { type: #STANDARD, value: 'PurchaseOrder' } }
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'PurchaseOrder', direction:  #DESC },
+                                        { by: 'PurchaseOrderItem', direction:  #ASC }] }]
+
+annotate view ZC_FI_COCKPIT_BOMBEIO_PED with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [ { id:            'Pedido',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Pedidos',
+                 position:      10 }  ]
+
+   // ------------------------------------------------------
+   // Field information
+   // ------------------------------------------------------
+
+  @UI.hidden: true
+  CompanyCode;
+
+  @Consumption.semanticObject:'PurchaseOrder'
+  @UI.lineItem:        [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  PurchaseOrder;
+
+  @UI.lineItem:        [{ position: 20 }]
+  @UI.identification:  [{ position: 20 }]
+  PurchaseOrderItem;
+
+  @UI.lineItem:        [{ position: 30 }]
+  @UI.identification:  [{ position: 30 }]
+  Plant;
+
+  @UI.hidden: true
+  PlantName;
+
+  @UI.lineItem:        [{ position: 40 }]
+  @UI.identification:  [{ position: 40 }]
+  Supplier;
+
+  @UI.hidden: true
+  SupplierName;
+
+  @Consumption.semanticObject:'Material'
+  @UI.lineItem:        [{ position: 50, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 50, semanticObjectAction: 'display', type: #WITH_INTENT_BASED_NAVIGATION }]
+  Material;
+
+  @UI.hidden: true
+  MaterialName;
+
+  @UI.lineItem:        [{ position: 60 }]
+  @UI.identification:  [{ position: 60 }]
+  OrderQuantity;
+
+  //  PurchaseOrderQuantityUnit;
+
+  @UI.lineItem:        [{ position: 70 }]
+  @UI.identification:  [{ position: 70 }]
+  CreationDate;
+
+}

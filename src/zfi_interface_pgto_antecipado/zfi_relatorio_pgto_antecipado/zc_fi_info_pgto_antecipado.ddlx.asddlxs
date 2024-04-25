@@ -1,0 +1,129 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Solicitação Pagamento Antecipado',
+    typeNamePlural: 'Solicitação Pagamento Antecipado',
+    title: {
+      type: #STANDARD,
+      label: 'Solicitação Pagamento Antecipado',
+      value: 'ObjpageTitle'
+    }
+  }}
+annotate view ZC_FI_INFO_PGTO_ANTECIPADO with
+{
+  @UI.facet: [
+     {
+       id: 'idSintese',
+       type: #COLLECTION,
+       label: 'Síntese',
+       position: 10
+     },
+     {
+       type: #FIELDGROUP_REFERENCE,
+       parentId: 'idSintese',
+       targetQualifier: 'idGeral',
+       label: 'Dados Gerais',
+       position: 20
+     },
+     { id: 'log',
+       purpose: #STANDARD,
+       type: #LINEITEM_REFERENCE,
+       label: 'Log Processamento',
+       position: 30,
+       targetElement: '_Mensagens'
+     }
+  ]
+
+  @EndUserText.label: 'Empresa'
+  @UI:{ lineItem: [{ position: 10 }], fieldGroup: [{ position: 10, qualifier: 'idGeral' }]}
+  bukrs;
+
+  @UI:{ lineItem: [{ position: 20 }] }
+  @UI:{ selectionField: [{ position: 10 }], fieldGroup:[{ position: 20, qualifier: 'idGeral' }] }
+  @EndUserText.label: 'Doc. Vendas'
+  vbeln;
+
+  @UI:{ lineItem: [{ position: 30 }], fieldGroup:[{ position: 30, qualifier: 'idGeral' }] }
+  @UI:{ selectionField: [{ position: 20 }] }
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_FI_VH_CUSTOMER', element: 'Customer'} }]
+  @EndUserText.label: 'Cliente'
+  kunnr;
+
+  @UI:{ lineItem: [{ position: 40 }], fieldGroup:[{ position: 40, qualifier: 'idGeral' }] }
+  @EndUserText.label: 'Valor'
+  valor;
+
+  @UI.hidden: true
+  TransactionCurrency;
+
+  @UI:{ lineItem: [{ position: 50 }], fieldGroup:[{ position: 50, qualifier: 'idGeral' }] }
+  @UI:{ selectionField: [{ position: 30 }] }
+  @EndUserText.label: 'Data Processamento'
+  @Consumption.filter.selectionType: #INTERVAL
+  criado_em;
+
+
+  @UI:{ lineItem: [{ position: 60 }], fieldGroup:[{ position: 60, qualifier: 'idGeral' }] }
+  @EndUserText.label: 'Hora Registro'
+  hora_registro;
+
+  @UI:{ lineItem: [{ position: 70 }] }
+  @EndUserText.label: 'Usuario'
+  usuario;
+
+  @UI:{ selectionField: [{ position: 40 }] }
+  @UI:{ lineItem: [{ position: 80 }], fieldGroup:[{ position: 70, qualifier: 'idGeral' }] }
+  @EndUserText.label: 'Solic. Adiantamento'
+  Doc_adiantamento;
+
+  @UI:{ selectionField: [{ position: 50 }] }
+  @UI:{ lineItem: [{ position: 90 }], fieldGroup:[{ position: 80, qualifier: 'idGeral' }] }
+  @EndUserText.label: 'Doc. Adiantamento'
+  Doc_compensacao;
+
+  @UI:{ selectionField: [{ position: 51 }] }
+  @UI:{ lineItem: [{ position: 91 }], fieldGroup:[{ position: 81, qualifier: 'idGeral' }] }
+  @EndUserText.label: 'Doc. Compensação'
+  DocCompensacaoFatura;
+
+  @UI:{ selectionField: [{ position: 52 }] }
+  @UI:{ lineItem: [{ position: 92 }], fieldGroup:[{ position: 82, qualifier: 'idGeral' }] }
+  @EndUserText.label: 'Fatura'
+  DocFatura;
+
+  @UI:{ selectionField: [{ position: 53 }] }
+  @UI:{ lineItem: [{ position: 93 }], fieldGroup:[{ position: 83, qualifier: 'idGeral' }] }
+  @EndUserText.label: 'Doc. Contab. Fatura'
+  DocContabilFatura;
+
+  //@UI.hidden: true
+  @EndUserText.label: 'Status'
+  @UI:{ selectionField: [{ position: 60 }]}
+  @UI:{ lineItem: [{ position: 100 }], fieldGroup:[{ position: 90, qualifier: 'idGeral' }]}
+  @Consumption.valueHelpDefinition: [{ entity:{ name: 'ZI_FI_VH_STATUS_INTF_PGTO', element: 'DomainValue' } }]
+  status;
+
+  //  @UI:{ lineItem: [{ position: 90 }] }
+  //  @EndUserText.label: 'TXID'
+  @UI.hidden: true
+  Txid;
+
+  //  @UI:{ lineItem: [{ position: 90 }] }
+  //  @EndUserText.label: 'Flag de cancelamento'
+  @UI.hidden: true
+  flag_cancelamento;
+
+  @UI.hidden: true
+  Status_Txt;
+
+  @UI.hidden: true
+  CustomerName;
+
+  @UI.hidden: true
+  ObjpageTitle;
+
+  @UI:{ lineItem: [{ position: 110 }], fieldGroup:[{ position: 100, qualifier: 'idGeral' }] }
+  @EndUserText.label: 'Status pgto'
+  Status_Pgto;
+
+}

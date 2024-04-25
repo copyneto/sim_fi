@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_REST_CREDIT_SEG_GET</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Solicitação GET - segmento de crédito</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IO_REQUEST</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>HTTP Framework (iHTTP) HTTP Request</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>IO_RESPONSE</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>HTTP Framework (iHTTP) HTTP Response</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DATA</CMPNAME>
+     <SCONAME>IO_REQUEST</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>HTTP Framework (iHTTP) HTTP Request</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

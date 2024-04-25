@@ -1,0 +1,3 @@
+sap.ui.define(["sap/m/MessageToast"],function(t){"use strict";return{onInit:function(t){this.byId("br.com.redesim.retornext::sap.suite.ui.generic.template.ListReport.view.ListReport::ZC_FI_VAN_BAN_RETORNO--listReportFilter-btnGo").setText("Executar Retor+
+no")}}});                                                                                                                                                                                                                                                      
+//# sourceMappingURL=ListReportExt.controller.js.map                                                                                                                                                                                                           

@@ -1,0 +1,118 @@
+@Metadata.layer: #CORE
+
+@UI: {
+    headerInfo: {
+        typeNamePlural: 'Cheques'
+    },
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'Bukrs',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+    }]
+}
+annotate entity ZC_CUSTCHEQUE_COMP_ICHEQUES with
+{
+
+  @UI.facet: [
+  {          id: 'CHEQUE',
+      isSummary: true,
+      purpose: #STANDARD,
+      type: #LINEITEM_REFERENCE,
+      label: 'Cheques',
+      position: 10
+  }]
+
+  @UI: { lineItem:       [{ position: 10, criticality: 'CriticalityAtri' }],
+         identification: [{ position: 10 }]}
+  Atribuido;
+
+  @UI.hidden: true
+  CriticalityAtri;
+
+  @UI.hidden: true
+  Bukrs;
+
+  @UI.hidden: true
+  Kunnr;
+
+  @UI: { lineItem:       [{ position: 20  }],
+         identification: [{ position: 20 }]}
+  Ncheque;
+
+  @UI: { lineItem:       [{ position: 30, label: 'Dinheiro' }],
+         identification: [{ position: 30, label: 'Dinheiro'  }]}
+  Dinheiro;
+
+  @UI: { lineItem:       [{ position: 40  }],
+         identification: [{ position: 40 }]}
+  Valor;
+
+  @UI.hidden: true
+  Moeda;
+
+  @UI: { lineItem:       [{ position: 50  }],
+         identification: [{ position: 50 }]}
+  Doc;
+
+  @UI: { lineItem:       [{ position: 60  }],
+         identification: [{ position: 60 }]}
+  Gjahr;
+
+  @UI: { lineItem:       [{ position: 70  }],
+         identification: [{ position: 70 }]}
+  Item;
+
+  @UI: { lineItem:       [{ position: 80  }],
+         identification: [{ position: 80 }]}
+  TpDoc;
+
+  @UI.hidden: true
+  TipoDocDesc;
+
+  @UI: { lineItem:       [{ position: 90  }],
+         identification: [{ position: 90 }]}
+  ChaveLanc;
+
+  @UI: { lineItem:       [{ position: 100  }],
+         identification: [{ position: 100 }]}
+  CodRZE;
+
+  @UI: { lineItem:       [{ position: 110  }],
+         identification: [{ position: 110 }]}
+  Atribuicao;
+
+  @UI: { lineItem:       [{ position: 120  }],
+         identification: [{ position: 120 }]}
+  Refe;
+
+  @UI: { lineItem:       [{ position: 130  }],
+         identification: [{ position: 130 }]}
+  DataLanc;
+
+  @UI: { lineItem:       [{ position: 140  }],
+         identification: [{ position: 140 }]}
+  Vencimento;
+
+  @UI: { lineItem:       [{ position: 150  }],
+         identification: [{ position: 150 }]}
+  Xref1;
+
+  @UI: { lineItem:       [{ position: 160  }],
+         identification: [{ position: 160 }]}
+  Xref2;
+
+  @UI.hidden: true
+  Name;
+
+  @UI.hidden: true
+  @UI: { lineItem: [{ type : #FOR_ACTION, dataAction: 'setAtribuido', label:'Marcar/Desmarcar' },
+                    { type : #FOR_ACTION, dataAction: 'setDinheiro', label:'Informar dinheiro' } ]}
+  DescEmp;
+  /* Associations */
+  //_Header;
+
+}

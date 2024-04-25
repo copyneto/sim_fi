@@ -1,0 +1,27 @@
+@Metadata.layer: #CORE
+annotate view ZC_FI_RET_CLIENT
+    with 
+{
+
+@UI.facet:   [ { id:             'Cliente',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Retirar Clientes da Regra de Dias',
+                 position:        10 } ]
+
+    @UI: {  lineItem:       [ { position: 10 } ] }
+    @UI: {  identification: [ { position: 10 } ] }
+    @UI: { selectionField: [{ position: 10 }] }
+    @EndUserText.label: 'Cliente'
+    Cliente;
+    @UI.hidden: true
+    Nome;
+    @UI: {  lineItem:       [ { position: 20 } ] }
+    @UI: {  identification: [ { position: 20 } ] }
+    @EndUserText.label: 'Criado por'
+    UsuarioCriacao;
+    @UI: {  lineItem:       [ { position: 30 } ] }
+    @UI: {  identification: [ { position: 30 } ] }
+    @EndUserText.label: 'Data de Criação'
+    DataCriacao;   
+}

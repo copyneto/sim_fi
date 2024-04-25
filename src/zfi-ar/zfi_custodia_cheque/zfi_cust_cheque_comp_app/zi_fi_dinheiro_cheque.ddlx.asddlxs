@@ -1,0 +1,7 @@
+@Metadata.layer: #CORE
+annotate entity ZI_FI_DINHEIRO_CHEQUE with
+{
+  @EndUserText.label: 'Valor'
+  dinheiro;
+
+}

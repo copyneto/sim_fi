@@ -1,0 +1,120 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { typeName: 'Documento',
+                  typeNamePlural: 'Documentos',
+                  title: { type: #STANDARD, value: 'TextKey' } }
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'FiscalYear', direction:  #DESC },
+                                        { by: 'AccountingDocument', direction:  #DESC },
+                                        { by: 'AccountingDocumentItemNo', direction:  #ASC }] }]
+
+annotate view ZC_FI_COCKPIT_BOMBEIO_DEV_CAN with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [ { id:            'DevolucaoCancelamento',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'Devolucao/Cancelamento',
+                 position:      10 }  ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+
+  @UI.hidden: true
+  CompanyCode;
+
+  @UI.hidden: true
+  TextKey;
+
+  @Consumption.semanticObject:'AccountingDocument'
+  @UI.lineItem:        [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  AccountingDocument;
+
+  @UI.lineItem:        [{ position: 20 }]
+  @UI.identification:  [{ position: 20 }]
+  AccountingDocumentItemNo;
+
+  @UI.lineItem:        [{ position: 30 }]
+  @UI.identification:  [{ position: 30 }]
+  FiscalYear;
+
+  @Consumption.semanticObject:'AccountingDocument'
+  @UI.lineItem:        [{ position: 40, semanticObjectAction: 'displayReferenceDocument', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 40, semanticObjectAction: 'displayReferenceDocument', type: #WITH_INTENT_BASED_NAVIGATION }]
+  InvoiceReference;
+
+  @UI.lineItem:        [{ position: 50 }]
+  @UI.identification:  [{ position: 50 }]
+  InvoiceItemReference;
+
+  @UI.lineItem:        [{ position: 60 }]
+  @UI.identification:  [{ position: 60 }]
+  InvoiceReferenceFiscalYear;
+
+  @Consumption.semanticObject:'PurchaseOrder'
+  @UI.lineItem:        [{ position: 70, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 70, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  PurchaseOrder;
+
+  @UI.lineItem:        [{ position: 80 }]
+  @UI.identification:  [{ position: 80 }]
+  PurchaseOrderItem;
+
+  @Consumption.semanticObject:'SupplierInvoice'
+  @UI.lineItem:        [{ position: 90, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 90, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  SupplierInvoice;
+
+  @UI.lineItem:        [{ position: 100 }]
+  @UI.identification:  [{ position: 100 }]
+  Supplier;
+
+  @UI.hidden: true
+  SupplierName;
+
+  @UI.lineItem:        [{ position: 110 }]
+  @UI.identification:  [{ position: 110 }]
+  BusinessPlace;
+
+  @UI.hidden: true
+  BusinessPlaceDescription;
+
+  @UI.lineItem:        [{ position: 120 }]
+  @UI.identification:  [{ position: 120 }]
+  PaymentBlockingReason;
+
+  @UI.hidden: true
+  PaymentBlockingReasonName;
+
+  @UI.lineItem:        [{ position: 130 }]
+  @UI.identification:  [{ position: 130 }]
+  PaymentMethod;
+
+  @UI.hidden: true
+  PaymentMethodDescription;
+
+  @UI.lineItem:        [{ position: 140 }]
+  @UI.identification:  [{ position: 140 }]
+  HouseBank;
+
+  @UI.hidden: true
+  HouseBankName;
+
+  @UI.lineItem:        [{ position: 150 }]
+  @UI.identification:  [{ position: 150 }]
+  DocumentReferenceID;
+
+  @UI.lineItem:        [{ position: 160 }]
+  @UI.identification:  [{ position: 160 }]
+  NetDueDate;
+
+  @UI.lineItem:        [{ position: 170 }]
+  @UI.identification:  [{ position: 170 }]
+  Amount;
+
+}

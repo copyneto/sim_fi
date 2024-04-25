@@ -1,0 +1,58 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeNamePlural: 'Aprovadores',
+typeName: 'Aprovador',
+title: { type: #STANDARD, value:'Aprovador' },
+description: { type: #STANDARD, value: 'Status' } }
+
+annotate view ZC_DMS_APROVADORES with
+{
+  @UI.facet:   [ { id:             'Aprovadores',
+                  purpose:         #STANDARD,
+                  type:            #IDENTIFICATION_REFERENCE,
+                  label:           'Cadastro de Aprovadores',
+                  position:        10 } ]
+
+  @UI.selectionField: [{ position: 10 }]
+  @UI: { lineItem: [ { position:10 } ]}
+  @UI.identification: [{ position: 10 }]
+  @EndUserText.label: 'Aprovador'
+  Aprovador;
+
+  @UI: { lineItem: [ { position:20 } ]}
+  @UI.identification: [{ position: 20 }]
+  @EndUserText.label: 'Nome do Aprovador'
+  DescAprovador;
+
+  @Consumption.filter: { selectionType: #SINGLE }
+  @UI.selectionField: [{ position: 30 }]
+  @UI: { lineItem: [ { position:30 } ]}
+  @UI.identification: [{ position: 20 }]
+  @EndUserText.label: 'Ativo'
+  Status;
+
+  @UI: { lineItem: [ { position:40 } ]}
+  @UI.identification: [{ position: 40 }]
+  @EndUserText.label: 'Criado por'
+  Criado_por;
+
+  @UI: { lineItem: [ { position:50 } ]}
+  @UI.identification: [{ position: 50 }]
+  @EndUserText.label: 'Data'
+  Criado_em;
+
+  @UI: { lineItem: [ { position:60 } ]}
+  @UI.identification: [{ position: 60 }]
+  @EndUserText.label: 'Modificado por'
+  Modificado_por;
+
+  @UI: { lineItem: [ { position:70 } ]}
+  @UI.identification: [{ position: 70 }]
+  @EndUserText.label: 'Data de Modificação'
+  Modificado_em;
+
+  @UI: { lineItem: [ { position:80 } ]}
+  @UI.identification: [{ position: 80 }]
+  @EndUserText.label: 'Hora'
+  Hora;
+
+}

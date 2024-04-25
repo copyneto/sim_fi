@@ -1,0 +1,78 @@
+@Metadata.layer: #CORE
+
+
+@UI.headerInfo: { typeName: 'Documento',
+                  typeNamePlural: 'Documentos',
+                  title: { type: #STANDARD, value: 'PurchaseOrder' } }
+
+@UI.presentationVariant: [{ sortOrder: [{ by: 'PurchaseOrder', direction:  #DESC },
+                                        { by: 'PurchaseOrderItem', direction:  #ASC }] }]
+
+
+annotate entity ZC_FI_COCKPIT_BOMBEIO_REM_DIA with
+{
+
+  @UI.facet: [ { id:        'Remessadia',
+             purpose:       #STANDARD,
+             type:          #IDENTIFICATION_REFERENCE,
+             label:         'Remessas do dia',
+             position:      10 }  ]
+
+
+  @UI.hidden: true
+  CompanyCode;
+
+  @Consumption.semanticObject:'PurchaseOrder'
+  @UI.lineItem:        [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  @UI.identification:  [{ position: 10, semanticObjectAction: 'displayFactSheet', type: #WITH_INTENT_BASED_NAVIGATION }]
+  PurchaseOrder;
+
+  @UI.lineItem:        [{ position: 20 }]
+  @UI.identification:  [{ position: 20 }]
+  PurchaseOrderItem;
+
+  @UI.lineItem:        [{ position: 30 }]
+  @UI.identification:  [{ position: 30 }]
+  Remessa;
+
+  @UI.lineItem:        [{ position: 35 }]
+  @UI.identification:  [{ position: 35 }]
+  DataRemessa;
+
+  @UI.lineItem:        [{ position: 40 }]
+  @UI.identification:  [{ position: 40 }]
+  Plant;
+
+  @UI.hidden: true
+  PlantName;
+
+  @UI.lineItem:        [{ position: 50 }]
+  @UI.identification:  [{ position: 50 }]
+  Supplier;
+
+  @UI.hidden: true
+  SupplierName;
+
+  @UI.lineItem:        [{ position: 50 }]
+  @UI.identification:  [{ position: 50 }]
+  QtdUnidade;
+
+  @UI.lineItem:        [{ position: 60 }]
+  @UI.identification:  [{ position: 60 }]
+  Quantidade;
+
+
+  @UI.lineItem:        [{ position: 90 }]
+  @UI.identification:  [{ position: 90 }]
+  Moeda;
+
+  @UI.lineItem:        [{ position: 70 }]
+  @UI.identification:  [{ position: 70 }]
+  Montante;
+
+  @UI.lineItem:        [{ position: 80 }]
+  @UI.identification:  [{ position: 80 }]
+  ValorTotalRemessa;
+
+
+}

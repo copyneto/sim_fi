@@ -1,0 +1,133 @@
+@Metadata.layer: #CORE
+@UI: {
+    headerInfo: {
+        typeNamePlural: 'Cheques'
+    },
+    presentationVariant: [{
+        sortOrder: [{
+            by: 'Bukrs',
+            direction: #ASC
+        }],
+        visualizations: [{
+            type: #AS_LINEITEM
+        }]
+    }]
+}
+annotate entity ZC_FI_CUST_CHEQUE with
+{
+  @UI.facet: [
+  {   id: 'HEADER',
+     isSummary: true,
+     purpose: #STANDARD,
+     type: #IDENTIFICATION_REFERENCE,
+     //label: 'Cabeçalho',
+     position: 10
+  }
+  ]
+
+  @UI: { lineItem:       [{ position: 10 }],
+         identification: [{ position: 10 }],
+         selectionField: [{ position: 10 }] }
+  Bukrs;
+
+  @UI: { lineItem:       [{  position: 20 }],
+         identification: [{ position: 20 }],
+         selectionField: [{ position: 20 }] }
+  Kunnr;
+
+  @UI: { lineItem:       [{ position: 30  }],
+         identification: [{ position: 30 }],
+         selectionField: [{ position: 30 }] }
+  Ncheque;
+
+  @UI: { lineItem:       [{ position: 40 }],
+      identification: [{ position: 40 }] }
+  Budat;
+
+  @UI: { lineItem:      [{ position: 50 }],
+        identification: [{ position: 50 }],
+        selectionField: [{ position: 43 }] }
+  Ncontrato;
+
+  @UI: { lineItem:       [{ position: 60 }],
+      identification: [{ position: 60 }] }
+  Ncontratojuridico;
+
+  @UI: { lineItem:       [{ position: 70 }],
+        identification: [{ position: 70 }] }
+  Bupla;
+
+  @UI: { lineItem:       [{ position: 80 }],
+        identification: [{ position: 80 }] }
+  Zterm;
+
+  @UI: { lineItem:       [{ position: 90 }],
+        identification: [{ position: 90 }] }
+  Nchamado;
+
+  @UI: { lineItem:       [{ position: 80 }],
+        identification: [{ position: 80 }] }
+  Valor;
+
+  @UI.hidden: true
+  @UI: { lineItem:       [{ type : #FOR_ACTION, dataAction: 'setStatus', label:'Mod. Status' },
+                          { type : #FOR_ACTION, dataAction: 'deleteCheque', label : 'Estornar'},
+                          { type : #FOR_ACTION, dataAction: 'contab', label : 'Contabilizar'}
+
+                             ],
+        identification: [{ position: 110 }] }
+  Moeda;
+
+  @UI: { lineItem:       [{ position: 110 }],
+        identification: [{ position: 110 }] }
+  Status;
+
+  @UI.hidden: true
+  Desc_status;
+
+  @UI.hidden: true
+  NovoStatus;
+
+  @UI: { lineItem:       [{ position: 120 }],
+        identification: [{ position: 120 }] }
+  Doc;
+
+  @UI: { lineItem:       [{ position: 130 }],
+        identification: [{ position: 130 }] }
+  Gjahr;
+
+  @UI: { lineItem:       [{ position: 140 }],
+        identification: [{ position: 140 }] }
+  DocEstorno;
+
+  @UI: { lineItem:       [{ position: 142 }],
+       identification: [{ position: 142 }] }
+  DocDevolucao;
+
+  @UI: { lineItem:       [{ position: 144 }],
+        identification: [{ position: 144 }] }
+  DocCompensacao;
+
+  @UI: { lineItem:       [{ position: 150 }],
+          identification: [{ position: 150 }] }
+  Zcmc7;
+  @UI: { lineItem:       [{ position: 160 }],
+  identification: [{ position: 160 }] }
+  Hktid;
+  @UI: { lineItem:       [{ position: 170 }],
+  identification: [{ position: 170 }] }
+  Bankn;
+  @UI: { lineItem:       [{ position: 180 }],
+  identification: [{ position: 180 }] }
+  Bkont;
+  @UI: { lineItem:       [{ position: 190 }],
+  identification: [{ position: 190 }] }
+  Zcamara;
+
+  @UI: { selectionField:       [{ position: 60 }] }
+  VHContabilizado;
+  @UI: { lineItem:       [{ position: 200 }],
+  identification: [{ position: 200 }] }
+  VHContabilizadotxt;
+
+}

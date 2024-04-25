@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCLFI_SUGST_ADIAT_BOMBEIO</CLSNAME>
+    <LANGU>P</LANGU>
+    <DESCRIPT>Sugest Adt. Bombeio</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_ATRIB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Campo de caracteres do comprimento 10</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_AWTYP</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Operação de referência</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_BKTXT</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Texto de cabeçalho de documento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_BLART</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de documento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_BRL</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código da moeda</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_BVTYP</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Tipo de banco do parceiro</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_FINAL_BUSAREA</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Componente do nº versão</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PARAM_C1_BOMB</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 1</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PARAM_C2_CTCNPJ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PARAM_C2_RAIZCNPJ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PARAM_C2_TPCOND</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 2</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PARAM_C3_FORN</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 3</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PARAM_C3_MATRIZ</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 3</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PARAM_C3_PEDID</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave do Parâmetro 3</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PARAM_MOD</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Módulo</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PAY_METH</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Forma de pagamento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PMT_BLOCK</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Chave para o bloqueio de pagamento</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_POSNR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº item do documento da contabilidade</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_RAZ_ESPEC</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Código do Razão Especial</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_XBLNR</CMPNAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº documento de referência</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_EXTENSION</CMPNAME>
+     <SCONAME>IV_BUKRS</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Empresa</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_EXTENSION</CMPNAME>
+     <SCONAME>IV_ITEMNO</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Nº item do documento da contabilidade</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>FILL_EXTENSION</CMPNAME>
+     <SCONAME>RT_EXTENSION1</SCONAME>
+     <LANGU>P</LANGU>
+     <DESCRIPT>Container para parâmetro &apos;Customer Exit&apos;</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,3 @@
+sap.ui.define(["sap/m/MessageToast"],function(e){"use strict";return{onInit:function(e){this.byId("br.com.redesim.vanbancariaremessa::sap.suite.ui.generic.template.ListReport.view.ListReport::ZC_FI_VAN_BAN_REMESSA--listReportFilter-btnGo").setText("Execu+
+tar Remessa")}}});                                                                                                                                                                                                                                             
+//# sourceMappingURL=ListReportExt.controller.js.map                                                                                                                                                                                                           

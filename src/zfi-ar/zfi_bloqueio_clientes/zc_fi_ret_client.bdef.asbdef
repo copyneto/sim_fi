@@ -1,0 +1,8 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_FI_RET_CLIENT alias Ret
+{
+  use create;
+  use delete;
+}

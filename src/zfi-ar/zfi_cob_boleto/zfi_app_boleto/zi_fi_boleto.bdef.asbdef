@@ -1,0 +1,11 @@
+unmanaged implementation in class zclfi_bp_boleto unique;
+//strict ( 2 );
+
+define behavior for ZI_FI_BOLETO alias _Boleto
+{
+
+  action ( features : instance ) enviaEmail;
+  action ( features : instance ) enviaPortalB2B;
+  action ( features : instance ) gerarBoleto result [1] $self;
+
+}

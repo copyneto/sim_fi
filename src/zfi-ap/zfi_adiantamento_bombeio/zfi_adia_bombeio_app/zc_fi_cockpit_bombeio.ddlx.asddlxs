@@ -1,0 +1,158 @@
+@Metadata.layer: #CORE
+
+@UI.headerInfo: { typeName: 'Adiantamento Bombeio',
+                  typeNamePlural: 'Adiantamento Bombeio',
+                  title: { type: #STANDARD, label: 'Adiantamento Bombeio', value: 'CompanyCode' } }
+
+@UI.headerInfo.typeImageUrl: 'sap-icon://expense-report'
+
+annotate view ZC_FI_COCKPIT_BOMBEIO with
+{
+  // ------------------------------------------------------
+  // Header information
+  // ------------------------------------------------------
+
+  @UI.facet: [ { id:              'HeaderCompanyCode',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderCompanyCode',
+                 position:        10 },
+
+               { id:              'HeaderRemDiaSum',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderRemDiaSum',
+                 position:        20 },
+
+               { id:              'HeaderAdiPagSum',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderAdiPagSum',
+                 position:        30 },
+
+               { id:              'HeaderFaturasSum',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderFaturasSum',
+                 position:        40 },
+
+               { id:              'HeaderFaturasDRCSum',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderFaturasDRCSum',
+                 position:        50 },
+
+               { id:              'HeaderDevCancSum',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderDevCancSum',
+                 position:        60 },
+
+               { id:              'HeaderPaymentAmount',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderPaymentAmount',
+                 position:        70 },
+
+                { id:              'HeaderSolAdiSum',
+                 purpose:         #HEADER,
+                 type:            #DATAPOINT_REFERENCE,
+                 targetQualifier: 'HeaderSolAdiSum',
+                 position:        80 },
+
+               { id:              'Bombeio',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 position:        10 },
+
+               { id:              'SolicitacaoAdiantamento',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Solicitações de Adiantamento',
+                 position:        10,
+                 targetElement:   '_SolicitacaoAdiantamento' },
+
+
+               { id:              'Pagos',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Adiantamentos Pagos',
+                 position:        30,
+                 targetElement:   '_AdiaPagos' },
+
+               { id:              'Pedido',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Pedidos',
+                 position:        40,
+                 targetElement:   '_Pedido' },
+
+               { id:              'RemessaDia',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Remessas',
+                 position:        42,
+                 targetElement:   '_RemessaDia' },
+
+                { id:              'Fatura',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Faturas',
+                 position:        50,
+                 targetElement:   '_Faturas' },
+
+               { id:              'FaturaDRC',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Faturas DRC',
+                 position:        60,
+                 targetElement:   '_FaturaDRC' },
+
+               { id:              'DevolucaoCancelamento',
+                 purpose:         #STANDARD,
+                 type:            #LINEITEM_REFERENCE,
+                 label:           'Devoluções/Cancelamentos',
+                 position:        70,
+                 targetElement:   '_DevolucaoCancelamento' }
+
+
+               ]
+
+  // ------------------------------------------------------
+  // Field information
+  // ------------------------------------------------------
+
+  @UI.lineItem:       [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  @UI.dataPoint:       { qualifier: 'HeaderCompanyCode' }
+  CompanyCode;
+
+  @UI.hidden: true
+  CompanyCodeName;
+
+
+  @UI.dataPoint:       { qualifier: 'HeaderRemDiaSum' }
+  ValorTotalRemessa;
+
+  @UI.dataPoint:       { qualifier: 'HeaderSolAdiSum' }
+  SolAdiSum;
+
+  @UI.dataPoint:       { qualifier: 'HeaderAdiPagSum' }
+  AdiPagSum;
+
+  @UI.dataPoint:       { qualifier: 'HeaderFaturasSum' }
+  FaturasSum;
+
+  @UI.dataPoint:       { qualifier: 'HeaderFaturasDRCSum' }
+  FaturasDRCSum;
+
+  @UI.dataPoint:       { qualifier: 'HeaderDevCancSum' }
+  DevCancSum;
+
+  @UI.dataPoint:       { qualifier: 'HeaderPaymentAmount', criticality: 'PaymentAmountCrit', criticalityRepresentation: #WITHOUT_ICON  }
+  PaymentAmount;
+
+  @UI.hidden: true
+  PaymentAmountCrit;
+
+}

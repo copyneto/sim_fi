@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <INCLUDES>
+    <SOBJ_NAME>LZFGFI_FIELD_DOCDMSI01</SOBJ_NAME>
+    <SOBJ_NAME>LZFGFI_FIELD_DOCDMSO01</SOBJ_NAME>
+    <SOBJ_NAME>LZFGFI_FIELD_DOCDMSTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZFGFI_FIELD_DOCDMS</SOBJ_NAME>
+   </INCLUDES>
+   <DYNPROS>
+    <item>
+     <HEADER>
+      <PROGRAM>SAPLZFGFI_FIELD_DOCDMS</PROGRAM>
+      <SCREEN>0020</SCREEN>
+      <LANGUAGE>P</LANGUAGE>
+      <DESCRIPT>Documento DMS</DESCRIPT>
+      <TYPE>I</TYPE>
+      <NEXTSCREEN>0020</NEXTSCREEN>
+      <LINES>027</LINES>
+      <COLUMNS>121</COLUMNS>
+     </HEADER>
+     <CONTAINERS>
+      <RPY_DYCATT>
+       <TYPE>SCREEN</TYPE>
+       <NAME>SCREEN</NAME>
+      </RPY_DYCATT>
+     </CONTAINERS>
+     <FIELDS>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEXT</TYPE>
+       <NAME>LB_DOC_DMS</NAME>
+       <TEXT>Documento_DMS:</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>001</COLUMN>
+       <LENGTH>014</LENGTH>
+       <VISLENGTH>014</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>DM</GROUP1>
+       <FORMAT>CHAR</FORMAT>
+       <REQU_ENTRY>N</REQU_ENTRY>
+       <LABELLEFT>X</LABELLEFT>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>TEMPLATE</TYPE>
+       <NAME>INVFO-ZZ1_DOCDMS_MIH</NAME>
+       <TEXT>_________________________</TEXT>
+       <LINE>001</LINE>
+       <COLUMN>022</COLUMN>
+       <LENGTH>025</LENGTH>
+       <VISLENGTH>025</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <GROUP1>DM</GROUP1>
+       <FORMAT>CHAR</FORMAT>
+       <INPUT_FLD>X</INPUT_FLD>
+       <OUTPUT_FLD>X</OUTPUT_FLD>
+       <MATCHCODE>ZDMS_LIBERADO</MATCHCODE>
+      </RPY_DYFATC>
+      <RPY_DYFATC>
+       <CONT_TYPE>SCREEN</CONT_TYPE>
+       <CONT_NAME>SCREEN</CONT_NAME>
+       <TYPE>OKCODE</TYPE>
+       <TEXT>____________________</TEXT>
+       <LENGTH>020</LENGTH>
+       <VISLENGTH>020</VISLENGTH>
+       <HEIGHT>001</HEIGHT>
+       <FORMAT>CHAR</FORMAT>
+       <INPUT_FLD>X</INPUT_FLD>
+      </RPY_DYFATC>
+     </FIELDS>
+     <FLOW_LOGIC>
+      <RPY_DYFLOW>
+       <LINE>PROCESS BEFORE OUTPUT.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  MODULE m_busca_dados.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  MODULE m_processa_campo.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW/>
+      <RPY_DYFLOW>
+       <LINE>PROCESS AFTER INPUT.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  MODULE m_processa_dados.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  FIELD: invfo-zz1_docdms_mih.</LINE>
+      </RPY_DYFLOW>
+      <RPY_DYFLOW>
+       <LINE>  MODULE m_user_command_0100.</LINE>
+      </RPY_DYFLOW>
+     </FLOW_LOGIC>
+    </item>
+   </DYNPROS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

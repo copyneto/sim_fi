@@ -1,0 +1,5 @@
+CLASS zclfi_bp_cust_cheque DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_fi_cust_cheque.
+ENDCLASS.
+
+CLASS zclfi_bp_cust_cheque IMPLEMENTATION.
+ENDCLASS.

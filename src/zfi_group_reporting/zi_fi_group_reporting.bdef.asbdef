@@ -1,0 +1,13 @@
+unmanaged implementation in class zclfi_group_reporting_bh unique;
+strict ( 2 );
+
+define behavior for ZI_FI_GROUP_REPORTING alias Group
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  action ( features : instance ) equalizar result [1] $self;
+  action ( features : instance ) estornar ;
+  action ( features : instance ) analisar ;
+}

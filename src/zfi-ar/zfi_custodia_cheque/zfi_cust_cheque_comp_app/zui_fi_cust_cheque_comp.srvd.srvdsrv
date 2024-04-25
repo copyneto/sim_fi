@@ -1,0 +1,6 @@
+@EndUserText.label: 'Service Def - APP Cheque Compensação'
+define service ZUI_FI_CUST_CHEQUE_COMP {
+  expose ZC_CUSTCHEQUE_COMP_H as Header;
+  expose ZC_CUSTCHEQUE_COMP_ICHEQUES as Cheques;
+  expose ZC_CUSTCHEQUE_COMP_IFAT as Faturas;
+}

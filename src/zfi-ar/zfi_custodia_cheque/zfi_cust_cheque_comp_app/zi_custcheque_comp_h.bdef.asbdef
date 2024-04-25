@@ -1,0 +1,47 @@
+unmanaged implementation in class zclfi_bp_custcheque_comp unique;
+strict ( 2 );
+
+define behavior for ZI_CUSTCHEQUE_COMP_H alias _Header
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  association _Cheques;
+  association _Faturas;
+
+  action getCheques result [1] $self;
+
+  action compensar result [1] $self;
+}
+
+define behavior for ZI_CUSTCHEQUE_COMP_ICHEQUES alias _Cheques
+//late numbering
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  //update ( features : instance );
+  //delete;
+  field ( readonly ) Bukrs, Kunnr;
+  association _Header;
+
+  action setAtribuido result [1] $self;
+  action setDinheiro parameter ZI_FI_DINHEIRO_CHEQUE result [1] $self;
+
+
+}
+define behavior for ZI_CUSTCHEQUE_COMP_IFAT alias _Fat
+//late numbering
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  //update;
+  //delete;
+  field ( readonly ) Bukrs, Kunnr;
+  association _Header;
+
+  action setAtribuidoFat result [1] $self;
+
+}

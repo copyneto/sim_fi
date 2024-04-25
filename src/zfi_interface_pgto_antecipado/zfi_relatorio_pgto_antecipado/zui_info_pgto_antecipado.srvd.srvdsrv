@@ -1,0 +1,5 @@
+@EndUserText.label: 'Servc. defi. - Relat. Solic Pgto Antecip'
+define service ZUI_INFO_PGTO_ANTECIPADO {
+  expose ZC_FI_INFO_PGTO_ANTECIPADO;
+  expose ZC_FI_INFO_PGTO_ANTECIPADO_LOG;
+}
